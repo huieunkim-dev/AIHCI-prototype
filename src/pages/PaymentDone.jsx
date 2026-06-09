@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useKoreanTime from "../hooks/useKoreanTime";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./PaymentDone.module.scss";
 import logo_png from "../assets/logo.png";
@@ -11,6 +12,7 @@ const SECONDS = 3;
 
 function PaymentDone() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const [count, setCount] = useState(SECONDS);
@@ -34,7 +36,7 @@ function PaymentDone() {
             left: "-101.03%", top: "-691.09%", maxWidth: "none",
           }} />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 완료 텍스트 */}

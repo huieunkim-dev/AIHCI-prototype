@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./OrderDone.module.scss";
 import { useCart } from "../context/CartContext";
 import logo_png from "../assets/logo.png";
@@ -11,6 +12,7 @@ const imgHand    = icon_hand_png;
 
 function OrderDone() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { dispatch } = useCart();
 
   const handleHome = () => {
@@ -28,7 +30,7 @@ function OrderDone() {
             left: "-101.03%", top: "-691.09%", maxWidth: "none",
           }} />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 타이틀 */}

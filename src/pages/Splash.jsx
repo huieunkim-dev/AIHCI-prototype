@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./Splash.module.scss";
 import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
@@ -10,6 +11,7 @@ const mascotSheet =
 
 function Splash() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
 
   return (
     <div className={styles.page}>
@@ -22,7 +24,7 @@ function Splash() {
             <img src={spriteSheet} alt="MEGA COFFEE" />
           </div>
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       <h1 className={styles.title}>

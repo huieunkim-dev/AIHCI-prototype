@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./ModeSelect.module.scss";
 import logo_png from "../assets/logo.png";
 import icon_back_svg from "../assets/icon-back.svg";
@@ -16,6 +17,7 @@ const iconPerson =
 
 function ModeSelect() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
 
   return (
     <div className={styles.page}>
@@ -28,7 +30,7 @@ function ModeSelect() {
             <img src={spriteSheet} alt="MEGA COFFEE" />
           </div>
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       <button className={styles.homeButton} onClick={() => navigate("/")}>

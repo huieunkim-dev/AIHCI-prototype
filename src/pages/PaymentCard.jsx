@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./PaymentCard.module.scss";
 import logo_png from "../assets/logo.png";
 import icon_card_svg from "../assets/icon-card.svg";
@@ -12,6 +13,7 @@ const iconCash    = icon_cash_svg;
 
 function PaymentCard() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
 
@@ -29,7 +31,7 @@ function PaymentCard() {
             maxWidth: "none",
           }} />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 타이틀 */}

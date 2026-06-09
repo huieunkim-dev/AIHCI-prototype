@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import useKoreanTime from "../../hooks/useKoreanTime";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./MenuList.module.scss";
 import { CATEGORIES, getItemsByCategory } from "../../data/menuData";
@@ -11,6 +12,7 @@ const iconArrow = scroll_arrow_down_svg;
 
 function MenuList() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const [activeCategory, setActiveCategory] = useState("추천 메뉴");
@@ -63,7 +65,7 @@ function MenuList() {
             <img src={iconBack} alt="" />
             <span>이전으로</span>
           </button>
-          <span className={styles.time}>16:44</span>
+          <span className={styles.time}>{time}</span>
         </div>
 
         <div className={styles.tabs}>

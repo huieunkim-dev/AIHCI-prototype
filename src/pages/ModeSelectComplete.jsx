@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./ModeSelectComplete.module.scss";
 import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
@@ -14,6 +15,7 @@ const checkKorean = icon_check_outline_svg;
 
 function ModeSelectComplete() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const turtle = state?.turtle ?? false;
   const korean = state?.korean ?? false;
@@ -24,7 +26,7 @@ function ModeSelectComplete() {
         <div className={styles.logoText}>
           <img src={spriteSheet} alt="MEGA COFFEE" />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       <div className={styles.mascot}>

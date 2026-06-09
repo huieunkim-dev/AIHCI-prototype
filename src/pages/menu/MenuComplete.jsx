@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import useKoreanTime from "../../hooks/useKoreanTime";
 import styles from "./MenuComplete.module.scss";
 import { useCart } from "../../context/CartContext";
 import logo_png from "../../assets/logo.png";
@@ -19,6 +20,7 @@ const iconCheck2 = icon_check_outline_svg;
 
 function MenuComplete() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const { items } = useCart();
@@ -37,7 +39,7 @@ function MenuComplete() {
             maxWidth: "none",
           }} />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 마스코트 */}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useKoreanTime from "../hooks/useKoreanTime";
 import { useNavigate } from "react-router-dom";
 import styles from "./ModeSelectConfirm.module.scss";
 import logo_png from "../assets/logo.png";
@@ -20,6 +21,7 @@ function getConfirmText(turtle, korean) {
 
 function ModeSelectConfirm() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const [turtle, setTurtle] = useState(false);
   const [korean, setKorean] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -30,7 +32,7 @@ function ModeSelectConfirm() {
         <div className={styles.logoText}>
           <img src={spriteSheet} alt="MEGA COFFEE" />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       <div className={styles.container}>

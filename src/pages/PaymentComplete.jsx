@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useKoreanTime from "../hooks/useKoreanTime";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./PaymentComplete.module.scss";
 import { useCart } from "../context/CartContext";
@@ -12,6 +13,7 @@ const SECONDS = 5;
 
 function PaymentComplete() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const { total } = useCart();
@@ -36,7 +38,7 @@ function PaymentComplete() {
             left: "-101.03%", top: "-691.09%", maxWidth: "none",
           }} />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 금액 */}
