@@ -4,12 +4,10 @@ import styles from "./MenuList.module.scss";
 import { CATEGORIES, getItemsByCategory } from "../../data/menuData";
 import { useCart } from "../../context/CartContext";
 import icon_back_svg from "../../assets/icon-back.svg";
-import icon_cart_svg from "../../assets/icon-cart.svg";
+import scroll_arrow_down_svg from "../../assets/scroll-arrow-down.svg";
 
-const iconBack =
-  icon_back_svg;
-const iconArrow =
-  icon_cart_svg;
+const iconBack = icon_back_svg;
+const iconArrow = scroll_arrow_down_svg;
 
 function MenuList() {
   const navigate = useNavigate();
