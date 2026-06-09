@@ -1,16 +1,21 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./MenuComplete.module.scss";
 import { useCart } from "../../context/CartContext";
+import logo_png from "../../assets/logo.png";
+import mascot_png from "../../assets/mascot.png";
+import icon_hand_png from "../../assets/icon-hand.png";
+import icon_check_filled_svg from "../../assets/icon-check-filled.svg";
+import icon_check_outline_svg from "../../assets/icon-check-outline.svg";
 
 // 로고 텍스트 (Splash와 동일한 sprite)
-const imgLogo = "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
+const imgLogo = logo_png;
 // 마스코트 (Splash와 동일한 sprite)
-const imgMascot = "http://localhost:3845/assets/3960f84b87f2003d7ee551628bce0d13a67558bf.png";
+const imgMascot = mascot_png;
 // 터치 아이콘 (버튼 안)
-const imgTouch = "http://localhost:3845/assets/946e8e38544e14da8fbf3c682290de0ca6334e45.png";
+const imgTouch = icon_hand_png;
 // 체크 아이콘
-const iconCheck1 = "http://localhost:3845/assets/b57e7fbf84618f968d2f369281fb269df16a1232.svg";
-const iconCheck2 = "http://localhost:3845/assets/30e93ab0320b17f9e0ec1a5f2d83ecf4140171cc.svg";
+const iconCheck1 = icon_check_filled_svg;
+const iconCheck2 = icon_check_outline_svg;
 
 function MenuComplete() {
   const navigate = useNavigate();

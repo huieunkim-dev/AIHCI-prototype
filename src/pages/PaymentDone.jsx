@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./PaymentDone.module.scss";
+import logo_png from "../assets/logo.png";
+import card_remove_png from "../assets/card-remove.png";
 
-const imgLogo = "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
-const imgCard = "http://localhost:3845/assets/c456d479122a043a0636cd8c8b909eaef70361ce.png";
+const imgLogo = logo_png;
+const imgCard = card_remove_png;
 
 const SECONDS = 3;
 

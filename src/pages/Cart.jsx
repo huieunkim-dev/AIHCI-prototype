@@ -1,15 +1,19 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Cart.module.scss";
 import { useCart } from "../context/CartContext";
+import icon_x_svg from "../assets/icon-x.svg";
+import icon_minus_svg from "../assets/icon-minus.svg";
+import icon_plus_svg from "../assets/icon-plus.svg";
+import icon_arrow_right_svg from "../assets/icon-arrow-right.svg";
 
 const imgLine =
-  "http://localhost:3845/assets/c068dcacf05b12e5498ea92f2cbed272108c12c6.svg";
+  icon_x_svg;
 const imgRemove =
-  "http://localhost:3845/assets/768fc979494de91122ef0fd99a052d98d6075d99.svg";
+  icon_minus_svg;
 const imgMinus =
-  "http://localhost:3845/assets/43c344608cfbb50f3eea02d859713de54a56e7a1.svg";
+  icon_plus_svg;
 const imgPlus =
-  "http://localhost:3845/assets/b6c8d6c64fa1156c407156e35c2118a8f85b6434.svg";
+  icon_arrow_right_svg;
 
 function Cart() {
   const navigate = useNavigate();

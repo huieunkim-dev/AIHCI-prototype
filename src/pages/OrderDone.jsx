@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./OrderDone.module.scss";
 import { useCart } from "../context/CartContext";
+import logo_png from "../assets/logo.png";
+import mascot_png from "../assets/mascot.png";
+import icon_hand_png from "../assets/icon-hand.png";
 
-const imgLogo    = "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
-const imgMascot  = "http://localhost:3845/assets/3960f84b87f2003d7ee551628bce0d13a67558bf.png";
-const imgHand    = "http://localhost:3845/assets/946e8e38544e14da8fbf3c682290de0ca6334e45.png";
+const imgLogo    = logo_png;
+const imgMascot  = mascot_png;
+const imgHand    = icon_hand_png;
 
 function OrderDone() {
   const navigate = useNavigate();

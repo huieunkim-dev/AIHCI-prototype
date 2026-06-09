@@ -3,11 +3,13 @@ import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./MenuList.module.scss";
 import { CATEGORIES, getItemsByCategory } from "../../data/menuData";
 import { useCart } from "../../context/CartContext";
+import icon_back_svg from "../../assets/icon-back.svg";
+import icon_cart_svg from "../../assets/icon-cart.svg";
 
 const iconBack =
-  "http://localhost:3845/assets/f031499aa9f27c4966d073c255bb6c170fda41e5.svg";
+  icon_back_svg;
 const iconArrow =
-  "http://localhost:3845/assets/c936748508ad6fb54fdf6a8e43081874cbc47cc5.svg";
+  icon_cart_svg;
 
 function MenuList() {
   const navigate = useNavigate();
