@@ -17,6 +17,7 @@ import OrderConfirm from "./pages/OrderConfirm";
 import Payment from "./pages/Payment";
 import PaymentCard from "./pages/PaymentCard";
 import PaymentComplete from "./pages/PaymentComplete";
+import PaymentDone from "./pages/PaymentDone";
 import OrderDone from "./pages/OrderDone";
 
 const KIOSK_W = 1080;
@@ -60,6 +61,7 @@ function App() {
           <Route path="/payment" element={<Payment />} />
           <Route path="/payment/card" element={<PaymentCard />} />
           <Route path="/payment/complete" element={<PaymentComplete />} />
+          <Route path="/payment/done" element={<PaymentDone />} />
           <Route path="/order/done" element={<OrderDone />} />
         </Routes>
       </div>
