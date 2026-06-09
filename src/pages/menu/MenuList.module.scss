@@ -1,0 +1,317 @@
+.page {
+  width: 1080px;
+  height: 1920px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+// ── 헤더 (고정) ───────────────────────────────────────────
+.header {
+  flex-shrink: 0;
+  padding-top: 55px;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 52px;
+  height: 157px;
+}
+
+.backButton {
+  width: 391px;
+  height: 157px;
+  background-color: #fed32c;
+  border: none;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  cursor: pointer;
+  box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.11);
+
+  img {
+    width: 33px;
+    height: 64px;
+  }
+
+  span {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 700;
+    font-size: 70px;
+    color: #5a4a10;
+  }
+}
+
+.time {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: #000;
+  white-space: nowrap;
+}
+
+// ── 카테고리 탭 ───────────────────────────────────────────
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  padding: 87px 0 0 52px;
+  height: 227px; // 87 gap + 140 tab height
+}
+
+.tab {
+  padding: 10px 51px;
+  border: none;
+  border-radius: 24px 24px 0 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  color: #241613;
+  letter-spacing: -1.2px;
+  line-height: 60px;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+
+.tabActive {
+  color: #ddb000;
+  border-bottom: 3px solid #fed32c;
+}
+
+// ── 메뉴 스크롤 영역 ──────────────────────────────────────
+.menuWrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.menuScroll {
+  height: 100%;
+  overflow-y: auto;
+  padding: 52px 52px 40px 52px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 237px);
+  column-gap: 40px;
+  row-gap: 60px;
+}
+
+// ── 메뉴 카드 ─────────────────────────────────────────────
+.menuCard {
+  width: 237px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+
+  &:active .cardImage {
+    filter: brightness(0.95);
+  }
+}
+
+.cardImage {
+  width: 237px;
+  height: 243px;
+  border-radius: 24px;
+  background: linear-gradient(to bottom, #e5ddd6, #edebe9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 24px;
+  transition: filter 0.1s;
+
+  // sprite 기준 컨테이너 — Figma inner container 크기(~95×161px)로 고정
+  .imgWrap {
+    position: relative;
+    width: 95px;
+    height: 161px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+      position: absolute;
+      max-width: none;
+      pointer-events: none;
+    }
+  }
+
+  .imgDirect {
+    width: 95px;
+    height: 161px;
+    flex-shrink: 0;
+    display: block;
+  }
+}
+
+.cardName {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #241613;
+  letter-spacing: -1.2px;
+  line-height: 60px;
+  margin-bottom: 8px;
+}
+
+.cardPrice {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  color: #5e5a4a;
+  letter-spacing: -1.2px;
+  line-height: 60px;
+}
+
+// ── 스크롤 화살표 ─────────────────────────────────────────
+.scrollArrows {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 87px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  pointer-events: none;
+}
+
+.arrowBtn {
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  pointer-events: all;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.arrowInnerUp {
+  transform: rotate(90deg);
+  width: 440px;
+  height: 87px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.arrowInnerDown {
+  transform: rotate(-90deg) scaleY(-1);
+  width: 440px;
+  height: 87px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+// ── 하단 바 (고정) ────────────────────────────────────────
+.bottomBar {
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0px -6px 4px rgba(83, 72, 26, 0.14);
+  padding: 30px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bottomMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 201px;
+}
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.orderType {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  color: #433e2a;
+  letter-spacing: -1.2px;
+  line-height: 60px;
+}
+
+.orderTotal {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  color: #241613;
+  letter-spacing: -1.75px;
+  line-height: 60px;
+
+  .unit {
+    font-weight: 500;
+    font-size: 70px;
+  }
+}
+
+.cartButton {
+  width: 542px;
+  height: 201px;
+  background-color: #fed32c;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  color: #30190b;
+  cursor: pointer;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.11);
+}
+
+.bottomActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 96px;
+}
+
+.actionBtn {
+  background-color: #e7e4da;
+  border: none;
+  border-radius: 24px;
+  padding: 18px 21px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  color: #79745f;
+  letter-spacing: -1.2px;
+  line-height: 60px;
+  white-space: nowrap;
+  cursor: pointer;
+}

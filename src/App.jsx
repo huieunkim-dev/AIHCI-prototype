@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/global.scss";
+import { CartProvider } from "./context/CartContext";
 
 import Splash from "./pages/Splash";
 import ModeSelect from "./pages/ModeSelect";
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <CartProvider>
       <div className="kiosk-scaler" ref={scalerRef}>
         <Routes>
           <Route path="/" element={<Splash />} />
@@ -61,6 +63,7 @@ function App() {
           <Route path="/order/done" element={<OrderDone />} />
         </Routes>
       </div>
+      </CartProvider>
     </BrowserRouter>
   );
 }
