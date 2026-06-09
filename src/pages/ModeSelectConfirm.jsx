@@ -18,8 +18,7 @@ function ModeSelectConfirm() {
   const navigate = useNavigate();
   const [turtle, setTurtle] = useState(false);
   const [korean, setKorean] = useState(false);
-
-  const bothSelected = turtle && korean;
+  const [checked, setChecked] = useState(false);
 
   return (
     <div className={styles.page}>
@@ -76,16 +75,19 @@ function ModeSelectConfirm() {
 
             <div className={styles.confirmRow}>
               <span className={styles.confirmText}>{getConfirmText(turtle, korean)}</span>
-              <div className={`${styles.checkButton} ${bothSelected ? styles.checkButtonActive : ""}`}>
+              <button
+                className={`${styles.checkButton} ${checked ? styles.checkButtonActive : ""}`}
+                onClick={() => setChecked((v) => !v)}
+              >
                 <img src={iconCheck} alt="" />
-              </div>
+              </button>
             </div>
           </div>
         </div>
 
         <button
-          className={`${styles.confirmButton} ${bothSelected ? styles.confirmButtonActive : ""}`}
-          onClick={() => navigate("/mode-select/complete", { state: { turtle, korean } })}
+          className={`${styles.confirmButton} ${checked ? styles.confirmButtonActive : ""}`}
+          onClick={() => checked && navigate("/mode-select/complete", { state: { turtle, korean } })}
         >
           확인
         </button>
