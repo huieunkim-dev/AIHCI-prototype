@@ -1,0 +1,164 @@
+.page {
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+  background: #fed32c;
+}
+
+// ── 헤더 ─────────────────────────────────────────────────
+.header {
+  position: absolute;
+  left: 52px;
+  top: 60px;
+  width: 976px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrap {
+  position: relative;
+  width: 280px;
+  height: 39px;
+  overflow: hidden;
+}
+
+.time {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: #000;
+  white-space: nowrap;
+}
+
+// ── 타이틀 ────────────────────────────────────────────────
+.titleSection {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 492.5px);
+  transform: translate(-50%, -50%);
+  width: 821px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 19px;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #6e5e22;
+  line-height: normal;
+  margin: 0;
+}
+
+.title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 128px;
+  color: #241613;
+  line-height: normal;
+  margin: 0;
+  white-space: pre-line;
+  text-align: center;
+  width: 819px;
+}
+
+// ── 마스코트 ──────────────────────────────────────────────
+.mascotWrap {
+  position: absolute;
+  left: 50%;
+  top: 703px;
+  transform: translateX(-50%);
+  width: 408px;
+  height: 470px;
+  overflow: hidden;
+}
+
+// ── 예상 대기시간 카드 ────────────────────────────────────
+.waitCard {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 361.5px);
+  transform: translate(-50%, -50%);
+  width: 940px;
+  height: 297px;
+  background: #fafafa;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+}
+
+// ── 핸드 아이콘 ───────────────────────────────────────────
+.handIcon {
+  position: relative;
+  width: 84px;
+  height: 116px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+// ── 대기 텍스트 ───────────────────────────────────────────
+.waitText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+  width: 347px;
+}
+
+.waitLabel {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  color: #30190b;
+  line-height: normal;
+  margin: 0;
+}
+
+.waitTime {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 96px;
+  color: #30190b;
+  line-height: normal;
+  margin: 0;
+}
+
+// ── 처음 화면으로 돌아가기 버튼 ──────────────────────────
+.backBtn {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 642.5px);
+  transform: translate(-50%, -50%);
+  width: 940px;
+  height: 157px;
+  background: #fafafa;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+  padding: 0 166px;
+}
+
+.backLabel {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  white-space: nowrap;
+}

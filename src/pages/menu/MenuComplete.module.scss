@@ -1,0 +1,146 @@
+.page {
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// ── 상단 헤더 ─────────────────────────────────────────────
+.header {
+  position: absolute;
+  left: 52px;
+  top: 60px;
+  width: 976px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrap {
+  position: relative;
+  width: 280px;
+  height: 39px;
+  overflow: hidden;
+}
+
+.time {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: #000;
+  white-space: nowrap;
+}
+
+// ── 마스코트 ──────────────────────────────────────────────
+.mascotWrap {
+  position: absolute;
+  left: 50%;
+  top: 393px;
+  transform: translateX(-50%);
+  width: 514px;
+  height: 469px;
+  overflow: hidden;
+}
+
+// ── 중앙 텍스트 영역 ──────────────────────────────────────
+.textSection {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% + 96.5px));
+  width: 703px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 19px;
+}
+
+.subtitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  color: #955002;
+  text-align: center;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 128px;
+  color: #30190b;
+  text-align: center;
+  line-height: normal;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.checkIcon {
+  width: 62px;
+  height: 62px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.itemName {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #6f4719;
+  text-align: center;
+  line-height: normal;
+  width: 345px;
+}
+
+// ── 하단 버튼 ─────────────────────────────────────────────
+.continueBtn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% + 600px));
+  width: 940px;
+  height: 242px;
+  background: #fed32c;
+  border: none;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  cursor: pointer;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+
+  span {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    color: #30190b;
+    white-space: nowrap;
+  }
+}
+
+.touchIconWrap {
+  position: relative;
+  width: 84px;
+  height: 116px;
+  overflow: hidden;
+  flex-shrink: 0;
+}

@@ -1,0 +1,163 @@
+.page {
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+  background: #4d4c45;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+// ── 메인 카드 ─────────────────────────────────────────────
+.card {
+  position: absolute;
+  left: 70px;
+  top: 103px;
+  width: 940px;
+  height: 1412px;
+  background: #fafafa;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 75px 24px;
+  gap: 68px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+// ── 메뉴 이름 ─────────────────────────────────────────────
+.itemName {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  color: #241613;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 100px;
+  margin: 0;
+  flex-shrink: 0;
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+// ── 노란 이미지 카드 ──────────────────────────────────────
+.imgCard {
+  width: 628px;
+  height: 201px;
+  background: linear-gradient(to bottom, #ffe16c, #fed32c);
+  border-radius: 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 14px 75px 14px;
+  flex-shrink: 0;
+  overflow: visible;
+  position: relative;
+}
+
+.imgWrap {
+  position: relative;
+  width: 163px;
+  height: 274px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    position: absolute;
+    max-width: none;
+    pointer-events: none;
+  }
+}
+
+.imgDirect {
+  width: 163px;
+  height: 274px;
+  display: block;
+  flex-shrink: 0;
+}
+
+// ── 한줄 소개 ─────────────────────────────────────────────
+.quote {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 70px;
+  color: #ddb000;
+  text-align: center;
+  letter-spacing: -1.75px;
+  line-height: 108px;
+  width: 849px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+// ── 설명 항목 목록 ────────────────────────────────────────
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.infoRow {
+  width: 848px;
+  height: 155px;
+  background: #ebe9e5;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 47px 37px;
+  flex-shrink: 0;
+}
+
+.infoTextList {
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+  padding-left: 75px;
+  width: 565px;
+  flex-shrink: 0;
+}
+
+.infoText {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  color: #241613;
+  letter-spacing: -1.25px;
+  line-height: 108px;
+}
+
+.infoIcon {
+  width: 89px;
+  height: 89px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+// ── 이해했어요 버튼 ───────────────────────────────────────
+.okBtn {
+  position: absolute;
+  left: 70px;
+  top: 1534px;
+  width: 940px;
+  height: 157px;
+  background: #fafafa;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  cursor: pointer;
+  box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+  z-index: 1;
+}

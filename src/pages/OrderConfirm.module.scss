@@ -1,0 +1,303 @@
+.page {
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+  background: #4d4c45;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+// ── 메인 카드 ─────────────────────────────────────────────
+.card {
+  position: absolute;
+  left: 70px;
+  top: 103px;
+  width: 940px;
+  height: 1412px;
+  background: #fafafa;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 75px 24px;
+  gap: 142px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+// ── 제목 + 구분선 ─────────────────────────────────────────
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+  width: 892px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  color: #241613;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: normal;
+  margin: 0;
+  width: 100%;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background: rgba(170, 147, 57, 0.3);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+// ── 바디 ──────────────────────────────────────────────────
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 133px;
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+// ── 주문 항목 영역 ────────────────────────────────────────
+.itemsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+  align-items: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+// 크림색 주문 카드
+.orderCard {
+  width: 848px;
+  background: #f9f3dd;
+  border-radius: 24px;
+  padding: 44px 41px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  flex-shrink: 0;
+}
+
+// 각 아이템 행
+.itemRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 97px;
+  flex-shrink: 0;
+}
+
+// 음료 썸네일
+.thumbnail {
+  width: 151px;
+  height: 254px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.thumbImgWrap {
+  position: relative;
+  width: 151px;
+  height: 254px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    max-width: none;
+    pointer-events: none;
+  }
+}
+
+.thumbImgDirect {
+  width: 151px;
+  height: 254px;
+  display: block;
+}
+
+// 아이템 정보
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  width: 518px;
+  flex-shrink: 0;
+}
+
+.itemNameGroup {
+  display: flex;
+  flex-direction: column;
+  width: 456px;
+}
+
+.itemName {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  color: #241613;
+  line-height: normal;
+  margin: 0;
+}
+
+.itemTemp {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  color: #5e5a4a;
+  line-height: normal;
+  margin: 0;
+}
+
+.itemPriceRow {
+  display: flex;
+  align-items: center;
+  gap: 189px;
+  width: 100%;
+}
+
+.itemQty {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  color: #58502e;
+  width: 121px;
+  flex-shrink: 0;
+}
+
+.itemPrice {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  color: #58502e;
+  width: 237px;
+  flex-shrink: 0;
+}
+
+// 구분선 + 총액
+.totalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.totalDivider {
+  width: 815px;
+  height: 2px;
+  background: rgba(170, 147, 57, 0.35);
+  border-radius: 1px;
+}
+
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.totalLabel {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  color: #241613;
+  letter-spacing: -1.6px;
+}
+
+.totalValue {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  color: #241613;
+  letter-spacing: -1.6px;
+  text-align: right;
+}
+
+// 힌트 텍스트
+.hint {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  color: #5e5a4a;
+  text-align: center;
+  line-height: normal;
+  margin: 0;
+  width: 560px;
+}
+
+// ── 액션 버튼 ─────────────────────────────────────────────
+.actionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.addMoreBtn {
+  width: 424px;
+  height: 201px;
+  background: #e7e4da;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  cursor: pointer;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+}
+
+.orderBtn {
+  width: 424px;
+  height: 201px;
+  background: #fed32c;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  cursor: pointer;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+}
+
+// ── 뒤로 가기 ─────────────────────────────────────────────
+.backBtn {
+  position: absolute;
+  left: 70px;
+  top: 1534px;
+  width: 940px;
+  height: 157px;
+  background: #fafafa;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  cursor: pointer;
+  box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+  z-index: 1;
+}

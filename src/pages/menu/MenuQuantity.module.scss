@@ -1,0 +1,217 @@
+.page {
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+  background: #4d4c45;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+// ── 메인 카드 ─────────────────────────────────────────────
+.card {
+  position: absolute;
+  left: 70px;
+  top: 103px;
+  width: 940px;
+  height: 1412px;
+  background: #fafafa;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 103px 34px;
+  gap: 83px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+// ── 제목 + 수량 선택 섹션 ─────────────────────────────────
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 408px;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.cardTitle {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 80px;
+  text-align: center;
+  color: #241613;
+  letter-spacing: -2px;
+  line-height: normal;
+  width: 100%;
+}
+
+.titleLight {
+  font-weight: 400;
+}
+
+.titleBold {
+  font-weight: 700;
+}
+
+// ── 수량 선택기 ───────────────────────────────────────────
+.qtySelector {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  background: #faf4dd;
+  border: 3px solid rgba(170, 147, 57, 0.34);
+  border-radius: 24px;
+  padding: 0 33px;
+  flex-shrink: 0;
+}
+
+.qtyBtn {
+  width: 148px;
+  height: 199px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+// CSS로 그린 − 아이콘
+.minusIcon {
+  display: block;
+  width: 64px;
+  height: 8px;
+  background: #241613;
+  border-radius: 4px;
+}
+
+// CSS로 그린 + 아이콘
+.plusIcon {
+  display: block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: #241613;
+    border-radius: 4px;
+  }
+
+  &::before {
+    width: 64px;
+    height: 8px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    width: 8px;
+    height: 64px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.qtyDisplay {
+  width: 323px;
+  height: 253px;
+  border-left: 2px solid rgba(170, 147, 57, 0.37);
+  border-right: 2px solid rgba(170, 147, 57, 0.37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+  // 숫자와 "잔" 텍스트 baseline 맞춤
+  .qtyNum, .qtyUnit {
+    line-height: 1;
+  }
+}
+
+.qtyNum {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 150px;
+  color: #241613;
+  letter-spacing: -2px;
+  line-height: normal;
+}
+
+.qtyUnit {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  color: #241613;
+  letter-spacing: -2px;
+  line-height: normal;
+}
+
+// ── 확인 버튼 (체크 + 텍스트) ─────────────────────────────
+.confirmRow {
+  display: flex;
+  align-items: center;
+  gap: 43px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.checkCircle {
+  width: 97px;
+  height: 97px;
+  background: #c4bdbc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.checkIcon {
+  font-size: 52px;
+  line-height: 1;
+  color: #fff;
+  font-weight: 700;
+}
+
+.confirmText {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  color: #705c0d;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+// ── 뒤로 가기 버튼 ────────────────────────────────────────
+.backBtn {
+  position: absolute;
+  left: 70px;
+  top: 1534px;
+  width: 940px;
+  height: 157px;
+  background: #fafafa;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  cursor: pointer;
+  box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+  z-index: 1;
+}

@@ -1,0 +1,200 @@
+.page {
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+  background: #fafafa;
+}
+
+// ── 상단 헤더 ─────────────────────────────────────────────
+.header {
+  position: absolute;
+  left: 52px;
+  top: 60px;
+  width: 976px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrap {
+  position: relative;
+  width: 280px;
+  height: 39px;
+  overflow: hidden;
+}
+
+.time {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: #000;
+  white-space: nowrap;
+}
+
+// ── 타이틀 ────────────────────────────────────────────────
+.title {
+  position: absolute;
+  left: 50%;
+  top: 299px;
+  transform: translateX(-50%);
+  width: 892px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 80px;
+  color: #241613;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 105px;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.titleBold {
+  font-weight: 700;
+}
+
+// ── 카드 버튼 (왼쪽 큰 버튼) ─────────────────────────────
+.cardBtn {
+  position: absolute;
+  left: 53px;
+  top: 613px;
+  width: 403px;
+  height: 817px;
+  background: #fed32c;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+}
+
+.cardIconWrap {
+  width: 111px;
+  height: 89px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.methodIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.cardLabels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardMain {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.cardSub {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #907a22;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+// ── 사이드 버튼 (오른쪽 2개) ──────────────────────────────
+.sideBtn {
+  position: absolute;
+  left: 481px;
+  width: 546px;
+  height: 394px;
+  background: #fff6d3;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+}
+
+.sideBtnInner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-left: 73px;
+  padding-right: 40px;
+}
+
+.sideIcon {
+  width: 99px;
+  height: 78px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.sideLabels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.sideMain {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  color: #30190b;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sideSub {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #b09012;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sideBtnDisabled {
+  opacity: 0.45;
+  cursor: default;
+  pointer-events: none;
+}
+
+// ── 뒤로 가기 ─────────────────────────────────────────────
+.backBtn {
+  position: absolute;
+  right: 70px;
+  top: 1534px;
+  width: 940px;
+  height: 157px;
+  background: #fffcef;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  cursor: pointer;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+}
