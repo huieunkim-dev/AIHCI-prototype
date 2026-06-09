@@ -96,42 +96,16 @@ export const MENU_ITEMS = [
     price: 3900,
     img: menu_choco_honey_png,
     imgStyle: { width: "256.6%", height: "104.87%", left: "-77.87%", top: "-3.48%" },
-    categories: ["추천 메뉴", "에이드&스무디", "차"],
+    categories: ["추천 메뉴", "에이드&스무디"],
     quote: "\"달콤한 초코 음료예요\"",
     infoItems: [
       { text: "꿀이 들어가요", icon: iconCoffeBean },
       { text: "초코 퐁당이 올라가요", icon: iconCoffeBean },
     ],
   },
-  {
-    id: "regular-coffee-hot",
-    name: "일반 원두커피",
-    price: 4500,
-    img: menu_coffee_png,
-    imgStyle: { width: "259.91%", height: "113.46%", left: "-80.17%", top: "-12.05%" },
-    categories: ["차"],
-    quote: "\"진하고 고소해요\"",
-    infoItems: [
-      { text: "설탕이 안들어가요", icon: iconNoSugar },
-      { text: "기본 원두커피 + 물이에요", icon: iconCoffeBean },
-    ],
-  },
-  {
-    id: "watermelon-tea",
-    name: "수박 코코넛 주스",
-    price: 4400,
-    img: menu_watermelon_juice_png,
-    imgStyle: { width: "255.51%", height: "103.31%", left: "-77.54%", top: "-1.6%" },
-    categories: ["차"],
-    quote: "\"시원하고 달콤해요\"",
-    infoItems: [
-      { text: "수박 과육이 들어가요", icon: iconCoffeBean },
-      { text: "코코넛 향이 나요", icon: iconCoffeBean },
-    ],
-  },
 ];
 
-export const CATEGORIES = ["추천 메뉴", "커피", "에이드&스무디", "차"];
+export const CATEGORIES = ["추천 메뉴", "커피", "에이드&스무디"];
 
 export function getItemsByCategory(category) {
   return MENU_ITEMS.filter((item) => item.categories.includes(category));
