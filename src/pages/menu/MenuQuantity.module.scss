@@ -82,10 +82,45 @@
   flex-shrink: 0;
 }
 
-.qtyIcon {
-  width: 72px;
-  height: auto;
+// CSS로 그린 − 아이콘
+.minusIcon {
   display: block;
+  width: 64px;
+  height: 8px;
+  background: #241613;
+  border-radius: 4px;
+}
+
+// CSS로 그린 + 아이콘
+.plusIcon {
+  display: block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: #241613;
+    border-radius: 4px;
+  }
+
+  &::before {
+    width: 64px;
+    height: 8px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    width: 8px;
+    height: 64px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
 }
 
 .qtyDisplay {
@@ -98,6 +133,11 @@
   justify-content: center;
   gap: 8px;
   flex-shrink: 0;
+
+  // 숫자와 "잔" 텍스트 baseline 맞춤
+  .qtyNum, .qtyUnit {
+    line-height: 1;
+  }
 }
 
 .qtyNum {
@@ -116,8 +156,6 @@
   color: #241613;
   letter-spacing: -2px;
   line-height: normal;
-  align-self: flex-end;
-  padding-bottom: 16px;
 }
 
 // ── 확인 버튼 (체크 + 텍스트) ─────────────────────────────
@@ -144,9 +182,10 @@
 }
 
 .checkIcon {
-  width: 51px;
-  height: auto;
-  display: block;
+  font-size: 52px;
+  line-height: 1;
+  color: #fff;
+  font-weight: 700;
 }
 
 .confirmText {

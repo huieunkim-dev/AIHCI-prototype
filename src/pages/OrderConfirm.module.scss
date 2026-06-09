@@ -23,9 +23,9 @@
   border-radius: 24px;
   display: flex;
   flex-direction: column;
-  gap: 200px;
   align-items: center;
   padding: 75px 24px;
+  gap: 142px;
   z-index: 1;
   overflow: hidden;
 }
@@ -48,11 +48,11 @@
   text-align: center;
   letter-spacing: -2px;
   line-height: normal;
-  width: 100%;
   margin: 0;
+  width: 100%;
 }
 
-.dividerWrap {
+.divider {
   width: 100%;
   height: 2px;
   background: rgba(170, 147, 57, 0.3);
@@ -60,84 +60,62 @@
   flex-shrink: 0;
 }
 
-// ── 아이템 목록 ───────────────────────────────────────────
-.itemList {
+// ── 바디 ──────────────────────────────────────────────────
+.body {
   display: flex;
   flex-direction: column;
-  gap: 70px;
-  align-items: center;
-  width: 890px;
+  gap: 133px;
+  align-items: flex-start;
+  width: 100%;
   flex-shrink: 0;
 }
 
-.emptyText {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 400;
-  font-size: 48px;
-  color: #79745e;
-  text-align: center;
+// ── 주문 항목 영역 ────────────────────────────────────────
+.itemsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+  align-items: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+// 크림색 주문 카드
+.orderCard {
+  width: 848px;
+  background: #f9f3dd;
+  border-radius: 24px;
+  padding: 44px 41px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  flex-shrink: 0;
 }
 
 // 각 아이템 행
 .itemRow {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 31px;
-  width: 100%;
+  align-items: flex-end;
+  gap: 97px;
   flex-shrink: 0;
 }
 
-.itemLeft {
-  display: flex;
-  align-items: center;
-  gap: 31px;
-  flex-shrink: 0;
-}
-
-.removeBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.removeIcon {
-  width: 50px;
-  height: 50px;
-  display: block;
-}
-
-.itemMain {
-  display: flex;
-  align-items: center;
-  gap: 58px;
-  flex-shrink: 0;
-}
-
-// 썸네일
+// 음료 썸네일
 .thumbnail {
-  width: 132px;
-  height: 123px;
-  background: linear-gradient(to bottom, #e5ddd6, #edebe9);
-  border-radius: 14px;
+  width: 151px;
+  height: 254px;
+  flex-shrink: 0;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 5px 0;
-  flex-shrink: 0;
-  overflow: visible;
-  position: relative;
+  overflow: hidden;
 }
 
 .thumbImgWrap {
   position: relative;
-  width: 94px;
-  height: 157px;
+  width: 151px;
+  height: 254px;
   overflow: hidden;
-  flex-shrink: 0;
-  margin-bottom: 5px;
 
   img {
     position: absolute;
@@ -147,142 +125,91 @@
 }
 
 .thumbImgDirect {
-  width: 94px;
-  height: 157px;
+  width: 151px;
+  height: 254px;
   display: block;
-  margin-bottom: 5px;
 }
 
 // 아이템 정보
 .itemInfo {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  width: 361px;
+  gap: 33px;
+  width: 518px;
   flex-shrink: 0;
+}
+
+.itemNameGroup {
+  display: flex;
+  flex-direction: column;
+  width: 456px;
 }
 
 .itemName {
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 70px;
   color: #241613;
-  letter-spacing: -1px;
-  line-height: 60px;
+  line-height: normal;
+  margin: 0;
+}
+
+.itemTemp {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  color: #5e5a4a;
+  line-height: normal;
+  margin: 0;
+}
+
+.itemPriceRow {
+  display: flex;
+  align-items: center;
+  gap: 189px;
+  width: 100%;
+}
+
+.itemQty {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  color: #58502e;
+  width: 121px;
+  flex-shrink: 0;
 }
 
 .itemPrice {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 60px;
-  color: #ddb000;
-  letter-spacing: -1.5px;
-  line-height: 60px;
-}
-
-.won {
-  font-weight: 500;
-}
-
-.itemDetail {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  color: #79745e;
-  letter-spacing: -0.6px;
-  line-height: 40px;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-align: left;
-}
-
-.arrow {
-  color: #ddb000;
-}
-
-// 수량 조절
-.qtyControl {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  flex-shrink: 0;
-}
-
-.qtyBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.qtyIcon {
-  width: 50px;
-  height: 50px;
-  display: block;
-}
-
-.qtyNum {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 600;
-  font-size: 64px;
-  color: #241613;
-  letter-spacing: -1.6px;
-  line-height: 60px;
-  min-width: 48px;
-  text-align: center;
-}
-
-// ── 요약 + 버튼 영역 ──────────────────────────────────────
-.summarySection {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  align-items: center;
-  width: 892px;
-  flex-shrink: 0;
-}
-
-.amountRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 858px;
-  white-space: nowrap;
-}
-
-.amountLabel {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 500;
   font-size: 50px;
-  color: #241613;
-  letter-spacing: -1.25px;
+  color: #58502e;
+  width: 237px;
+  flex-shrink: 0;
 }
 
-.amountValue {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 500;
-  font-size: 50px;
-  color: #241613;
-  letter-spacing: -1.25px;
-}
-
+// 구분선 + 총액
 .totalSection {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
-  width: 866px;
+  width: 100%;
   flex-shrink: 0;
+}
+
+.totalDivider {
+  width: 815px;
+  height: 2px;
+  background: rgba(170, 147, 57, 0.35);
+  border-radius: 1px;
 }
 
 .totalRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 890px;
+  width: 100%;
   white-space: nowrap;
 }
 
@@ -300,8 +227,22 @@
   font-size: 64px;
   color: #241613;
   letter-spacing: -1.6px;
+  text-align: right;
 }
 
+// 힌트 텍스트
+.hint {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  color: #5e5a4a;
+  text-align: center;
+  line-height: normal;
+  margin: 0;
+  width: 560px;
+}
+
+// ── 액션 버튼 ─────────────────────────────────────────────
 .actionButtons {
   display: flex;
   align-items: center;

@@ -7,6 +7,7 @@ function MenuDetail() {
   const { id } = useParams();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
+  const fromCart = state?.from === "cart";
   const item = getItemById(id);
 
   if (!item) return null;
@@ -50,7 +51,7 @@ function MenuDetail() {
       {/* 이해했어요! 버튼 */}
       <button
         className={styles.okBtn}
-        onClick={() => navigate(`/menu/${id}/temperature`, { state: { orderType } })}
+        onClick={() => fromCart ? navigate(-1) : navigate(`/menu/${id}/temperature`, { state: { orderType } })}
       >
         이해했어요!
       </button>

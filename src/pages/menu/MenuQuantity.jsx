@@ -4,9 +4,6 @@ import styles from "./MenuQuantity.module.scss";
 import { getItemById } from "../../data/menuData";
 import { useCart } from "../../context/CartContext";
 
-const iconMinus = "http://localhost:3845/assets/e87e194bbab8e8be21dd3449bca264c93546555c.svg";
-const iconPlus = "http://localhost:3845/assets/7428c058275ce0c30da7e3cb426a3c0a3e807134.svg";
-const iconCheck = "http://localhost:3845/assets/116a9b471f970aab5d777b4ea8f1c53d47d1729f.svg";
 
 function MenuQuantity() {
   const navigate = useNavigate();
@@ -24,6 +21,7 @@ function MenuQuantity() {
       type: "ADD",
       item: {
         id: `${id}-${temp}`,
+        itemId: id,
         name: item.name,
         price: item.price,
         temp,
@@ -58,7 +56,7 @@ function MenuQuantity() {
               className={styles.qtyBtn}
               onClick={() => setQty((q) => Math.max(1, q - 1))}
             >
-              <img src={iconMinus} alt="빼기" className={styles.qtyIcon} />
+              <span className={styles.minusIcon} />
             </button>
 
             <div className={styles.qtyDisplay}>
@@ -70,7 +68,7 @@ function MenuQuantity() {
               className={styles.qtyBtn}
               onClick={() => setQty((q) => q + 1)}
             >
-              <img src={iconPlus} alt="더하기" className={styles.qtyIcon} />
+              <span className={styles.plusIcon} />
             </button>
           </div>
         </div>
@@ -78,7 +76,7 @@ function MenuQuantity() {
         {/* 확인 버튼 */}
         <button className={styles.confirmRow} onClick={handleConfirm}>
           <div className={styles.checkCircle}>
-            <img src={iconCheck} alt="확인" className={styles.checkIcon} />
+            <span className={styles.checkIcon}>✓</span>
           </div>
           <span className={styles.confirmText}>정하셨으면 눌러주세요!</span>
         </button>
