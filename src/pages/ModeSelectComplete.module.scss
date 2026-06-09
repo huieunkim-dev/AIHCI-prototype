@@ -1,0 +1,160 @@
+.page {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+// ── Top bar ───────────────────────────────────────────────
+.topBar {
+  position: absolute;
+  top: 60px;
+  left: 52px;
+  width: 976px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoText {
+  position: relative;
+  width: 280px;
+  height: 39px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 301.44%;
+    height: 1206.03%;
+    left: -101.03%;
+    top: -691.09%;
+    max-width: none;
+    pointer-events: none;
+  }
+}
+
+.time {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  color: #000;
+  white-space: nowrap;
+}
+
+// ── 마스코트 ──────────────────────────────────────────────
+.mascot {
+  position: absolute;
+  top: 377px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 494px;
+  height: 485px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 414.53%;
+    height: 281.81%;
+    left: -25.42%;
+    top: -140.52%;
+    max-width: none;
+    pointer-events: none;
+  }
+}
+
+// ── 중앙 텍스트 블록 ──────────────────────────────────────
+.textBlock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(96.5px);
+  width: 703px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  align-items: center;
+}
+
+.subtitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  color: #955002;
+  text-align: center;
+}
+
+.mainTitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 128px;
+  color: #30190b;
+  text-align: center;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+  }
+
+  span {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    color: #6f4719;
+    text-align: center;
+    width: 345px;
+  }
+}
+
+// ── 메뉴 보러 가기 버튼 ───────────────────────────────────
+.menuButton {
+  position: absolute;
+  bottom: 221px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 940px;
+  height: 242px;
+  background-color: #fed32c;
+  border: none;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  cursor: pointer;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+}
+
+.menuButtonIcon {
+  position: relative;
+  width: 84px;
+  height: 116px;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 263.79%;
+    height: 191.25%;
+    left: -81.47%;
+    top: -45.94%;
+    max-width: none;
+    pointer-events: none;
+  }
+}
+
+.menuButtonText {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  white-space: nowrap;
+}
