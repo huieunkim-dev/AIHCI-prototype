@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Splash.module.scss";
+import logo_png from "../assets/logo.png";
+import mascot_png from "../assets/mascot.png";
 
 const spriteSheet =
-  "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
+  logo_png;
 const mascotSheet =
-  "http://localhost:3845/assets/3960f84b87f2003d7ee551628bce0d13a67558bf.png";
+  mascot_png;
 
 function Splash() {
   const navigate = useNavigate();

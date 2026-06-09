@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./PaymentComplete.module.scss";
 import { useCart } from "../context/CartContext";
+import logo_png from "../assets/logo.png";
+import card_insert_png from "../assets/card-insert.png";
 
-const imgLogo  = "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
-const imgCard  = "http://localhost:3845/assets/291ebbe9c29976ac9fe409c18b2c0e1ad44c72ef.png";
+const imgLogo  = logo_png;
+const imgCard  = card_insert_png;
 
 const SECONDS = 5;
 

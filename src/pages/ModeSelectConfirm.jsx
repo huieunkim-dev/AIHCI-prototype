@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ModeSelectConfirm.module.scss";
+import logo_png from "../assets/logo.png";
+import icon_back_svg from "../assets/icon-back.svg";
+import icon_turtle_svg from "../assets/icon-turtle.svg";
+import icon_check_svg from "../assets/icon-check.svg";
 
-const spriteSheet = "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
-const iconBack = "http://localhost:3845/assets/f031499aa9f27c4966d073c255bb6c170fda41e5.svg";
-const iconTurtle = "http://localhost:3845/assets/8ed4568f16bfd1c04251cd5dae12e1f5b06c6f92.svg";
-const iconCheck = "http://localhost:3845/assets/116a9b471f970aab5d777b4ea8f1c53d47d1729f.svg";
+const spriteSheet = logo_png;
+const iconBack = icon_back_svg;
+const iconTurtle = icon_turtle_svg;
+const iconCheck = icon_check_svg;
 
 function getConfirmText(turtle, korean) {
   if (turtle && korean) return "모두 진행하는게 맞나요?";

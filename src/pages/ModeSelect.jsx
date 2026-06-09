@@ -1,14 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./ModeSelect.module.scss";
+import logo_png from "../assets/logo.png";
+import icon_back_svg from "../assets/icon-back.svg";
+import icon_mic_svg from "../assets/icon-mic.svg";
+import icon_person_svg from "../assets/icon-person.svg";
 
 const spriteSheet =
-  "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
+  logo_png;
 const iconBack =
-  "http://localhost:3845/assets/f031499aa9f27c4966d073c255bb6c170fda41e5.svg";
+  icon_back_svg;
 const iconMic =
-  "http://localhost:3845/assets/577b2059d6fae7a831da7d09b9608d69f941c9a1.svg";
+  icon_mic_svg;
 const iconPerson =
-  "http://localhost:3845/assets/d6cb72ba3e7f87c709969e391fbfd8e21f427f2c.svg";
+  icon_person_svg;
 
 function ModeSelect() {
   const navigate = useNavigate();

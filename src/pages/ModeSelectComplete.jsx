@@ -1,11 +1,16 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./ModeSelectComplete.module.scss";
+import logo_png from "../assets/logo.png";
+import mascot_png from "../assets/mascot.png";
+import icon_hand_png from "../assets/icon-hand.png";
+import icon_check_filled_svg from "../assets/icon-check-filled.svg";
+import icon_check_outline_svg from "../assets/icon-check-outline.svg";
 
-const spriteSheet = "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
-const mascotSheet = "http://localhost:3845/assets/3960f84b87f2003d7ee551628bce0d13a67558bf.png";
-const handIcon = "http://localhost:3845/assets/946e8e38544e14da8fbf3c682290de0ca6334e45.png";
-const checkTurtle = "http://localhost:3845/assets/b57e7fbf84618f968d2f369281fb269df16a1232.svg";
-const checkKorean = "http://localhost:3845/assets/30e93ab0320b17f9e0ec1a5f2d83ecf4140171cc.svg";
+const spriteSheet = logo_png;
+const mascotSheet = mascot_png;
+const handIcon = icon_hand_png;
+const checkTurtle = icon_check_filled_svg;
+const checkKorean = icon_check_outline_svg;
 
 function ModeSelectComplete() {
   const navigate = useNavigate();

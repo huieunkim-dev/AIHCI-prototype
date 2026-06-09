@@ -1,10 +1,14 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./PaymentCard.module.scss";
+import logo_png from "../assets/logo.png";
+import icon_card_svg from "../assets/icon-card.svg";
+import icon_coupon_svg from "../assets/icon-coupon.svg";
+import icon_cash_svg from "../assets/icon-cash.svg";
 
-const imgLogo     = "http://localhost:3845/assets/6177c4c3536923fe3e8d46701606d6fc19eee77e.png";
-const iconCard    = "http://localhost:3845/assets/ebde53ee8cca7bf91c241223dd4b25a483fb01fd.svg";
-const iconCoupon  = "http://localhost:3845/assets/ec579d92cd263c70b134211731db4b585d1fdc4f.svg";
-const iconCash    = "http://localhost:3845/assets/50f330351abd6b8e520c13d2bfd0c20d483c91e6.svg";
+const imgLogo     = logo_png;
+const iconCard    = icon_card_svg;
+const iconCoupon  = icon_coupon_svg;
+const iconCash    = icon_cash_svg;
 
 function PaymentCard() {
   const navigate = useNavigate();
