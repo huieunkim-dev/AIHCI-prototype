@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Cart.module.scss";
 import { useCart } from "../context/CartContext";
 import icon_minus_svg from "../assets/icon-minus.svg";
+import AssistBar from "../components/AssistBar";
 
 const imgRemove = icon_minus_svg;
 
@@ -130,6 +131,8 @@ function Cart() {
       <button className={styles.backBtn} onClick={() => navigate(-1)}>
         뒤로 가기
       </button>
+
+      <AssistBar dark />
     </div>
   );
 }
