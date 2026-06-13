@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+  }
 }
 
 // ── 상단 헤더 ─────────────────────────────────────────────
@@ -28,6 +32,10 @@
     height: 100%;
     width: auto;
     display: block;
+
+    [data-contrast="high"] & {
+      filter: brightness(0) invert(1);
+    }
   }
 }
 
@@ -37,6 +45,10 @@
   font-size: 50px;
   color: #000;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── 마스코트 ──────────────────────────────────────────────
@@ -48,6 +60,10 @@
   width: 466px;
   height: 488px;
   overflow: hidden;
+
+  [data-contrast="high"] & img {
+    filter: grayscale(1) brightness(1.3);
+  }
 }
 
 // ── 중앙 텍스트 ───────────────────────────────────────────
@@ -72,6 +88,10 @@
   line-height: normal;
   white-space: nowrap;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #aea688;
+  }
 }
 
 .title {
@@ -82,6 +102,10 @@
   text-align: center;
   line-height: normal;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 // ── 아이템 목록 ───────────────────────────────────────────
@@ -123,6 +147,10 @@
   line-height: 45px;
   margin: 0;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #aea688;
+  }
 }
 
 .itemDetail {
@@ -133,6 +161,10 @@
   line-height: 45px;
   margin: 0;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── 결제하러 가기 버튼 ────────────────────────────────────
@@ -161,6 +193,10 @@
     font-size: 64px;
     color: #30190b;
     white-space: nowrap;
+
+    [data-contrast="high"] & {
+      color: #141414;
+    }
   }
 }
 
