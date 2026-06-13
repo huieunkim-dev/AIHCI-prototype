@@ -3,14 +3,14 @@ import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./ModeSelectComplete.module.scss";
 import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
-import icon_hand_png from "../assets/icon-hand.png";
+import icon_dine_in_svg from "../assets/icon-dine-in.svg";
 import icon_check_filled_svg from "../assets/icon-check-filled.svg";
 import icon_check_outline_svg from "../assets/icon-check-outline.svg";
 import AssistBar from "../components/AssistBar";
 
 const spriteSheet = logo_png;
 const mascotSheet = mascot_png;
-const handIcon = icon_hand_png;
+const cupIcon = icon_dine_in_svg;
 const checkTurtle = icon_check_filled_svg;
 const checkKorean = icon_check_outline_svg;
 
@@ -53,7 +53,7 @@ function ModeSelectComplete() {
 
       <button className={styles.menuButton} onClick={() => navigate("/menu")}>
         <div className={styles.menuButtonIcon}>
-          <img src={handIcon} alt="" />
+          <img src={cupIcon} alt="" />
         </div>
         <span className={styles.menuButtonText}>메뉴 보러 가기</span>
       </button>
