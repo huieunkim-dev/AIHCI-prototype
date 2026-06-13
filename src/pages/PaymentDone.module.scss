@@ -3,6 +3,10 @@
   height: 1920px;
   position: relative;
   background: #fafafa;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+  }
 }
 
 .header {
@@ -24,6 +28,10 @@
     height: 100%;
     width: auto;
     display: block;
+
+    [data-contrast="high"] & {
+      filter: brightness(0) invert(1);
+    }
   }
 }
 
@@ -33,6 +41,10 @@
   font-size: 50px;
   color: #000;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── 완료 텍스트 ───────────────────────────────────────────
@@ -56,6 +68,10 @@
   color: #241613;
   line-height: normal;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #aea688;
+  }
 }
 
 .title {
@@ -68,6 +84,10 @@
   margin: 0;
   width: 819px;
   text-align: center;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── 구분선 ────────────────────────────────────────────────
@@ -95,6 +115,10 @@
   white-space: pre-line;
   line-height: normal;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .guideBold {
