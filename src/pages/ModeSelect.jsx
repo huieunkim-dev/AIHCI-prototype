@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./ModeSelect.module.scss";
 import logo_png from "../assets/logo.png";
@@ -11,6 +11,8 @@ const iconBack = icon_back_svg;
 function ModeSelect() {
   const navigate = useNavigate();
   const time = useKoreanTime();
+  const { state } = useLocation();
+  const orderType = state?.orderType ?? "dine-in";
 
   return (
     <div className={styles.page}>
@@ -41,7 +43,7 @@ function ModeSelect() {
 
       <button
         className={`${styles.modeButton} ${styles.modeButtonEasy}`}
-        onClick={() => navigate("/mode-select/confirm")}
+        onClick={() => navigate("/mode-select/confirm", { state: { orderType } })}
       >
         <span className={styles.modeName}>쉬운 버전</span>
         <span className={styles.modeDesc}>

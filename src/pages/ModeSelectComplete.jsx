@@ -20,6 +20,7 @@ function ModeSelectComplete() {
   const { state } = useLocation();
   const turtle = state?.turtle ?? false;
   const korean = state?.korean ?? false;
+  const orderType = state?.orderType ?? "dine-in";
 
   return (
     <div className={styles.page}>
@@ -51,7 +52,10 @@ function ModeSelectComplete() {
         )}
       </div>
 
-      <button className={styles.menuButton} onClick={() => navigate("/menu")}>
+      <button
+        className={styles.menuButton}
+        onClick={() => navigate("/menu", { state: { orderType } })}
+      >
         <div className={styles.menuButtonIcon}>
           <img src={cupIcon} alt="" />
         </div>

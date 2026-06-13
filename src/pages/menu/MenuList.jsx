@@ -6,10 +6,12 @@ import { CATEGORIES, getItemsByCategory } from "../../data/menuData";
 import { useCart } from "../../context/CartContext";
 import icon_back_svg from "../../assets/icon-back.svg";
 import scroll_arrow_down_svg from "../../assets/scroll-arrow-down.svg";
+import icon_cart_svg from "../../assets/icon-cart.svg";
 import AssistBar from "../../components/AssistBar";
 
 const iconBack = icon_back_svg;
 const iconArrow = scroll_arrow_down_svg;
+const iconCart = icon_cart_svg;
 
 function MenuList() {
   const navigate = useNavigate();
@@ -43,7 +45,7 @@ function MenuList() {
     return () => cancelAnimationFrame(rafId);
   }, [activeCategory]);
 
-  const { items, total } = useCart();
+  const { total } = useCart();
 
   const visibleItems = getItemsByCategory(activeCategory);
 
@@ -54,8 +56,6 @@ function MenuList() {
   function handleCategoryChange(cat) {
     setActiveCategory(cat);
   }
-
-  const totalQty = items.reduce((s, i) => s + i.qty, 0);
 
   return (
     <div className={styles.page}>
@@ -76,7 +76,14 @@ function MenuList() {
               className={`${styles.tab} ${activeCategory === cat ? styles.tabActive : ""}`}
               onClick={() => handleCategoryChange(cat)}
             >
-              {cat}
+              {cat === "에이드&스무디" ? (
+                <span className={styles.tabMultiline}>
+                  <span>에이드</span>
+                  <span>&스무디</span>
+                </span>
+              ) : (
+                cat
+              )}
             </button>
           ))}
         </div>
@@ -157,13 +164,13 @@ function MenuList() {
             <span className={styles.orderTotal}>
               {total.toLocaleString()}
               <span className={styles.unit}>원</span>
-              {totalQty > 0 && ` (${totalQty}개)`}
             </span>
           </div>
           <button
             className={styles.cartButton}
             onClick={() => navigate("/cart", { state: { orderType } })}
           >
+            <img src={iconCart} className={styles.cartIcon} alt="" />
             담은 상품 보기
           </button>
         </div>

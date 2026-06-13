@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useKoreanTime from "../hooks/useKoreanTime";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./ModeSelectConfirm.module.scss";
 import logo_png from "../assets/logo.png";
 import icon_back_svg from "../assets/icon-back.svg";
@@ -24,6 +24,8 @@ function getConfirmText(turtle, korean) {
 function ModeSelectConfirm() {
   const navigate = useNavigate();
   const time = useKoreanTime();
+  const { state } = useLocation();
+  const orderType = state?.orderType ?? "dine-in";
   const [turtle, setTurtle] = useState(false);
   const [korean, setKorean] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -116,7 +118,9 @@ function ModeSelectConfirm() {
           className={`${styles.confirmButton} ${checked ? styles.confirmButtonActive : ""}`}
           onClick={() =>
             checked &&
-            navigate("/mode-select/complete", { state: { turtle, korean } })
+            navigate("/mode-select/complete", {
+              state: { turtle, korean, orderType },
+            })
           }
         >
           확인

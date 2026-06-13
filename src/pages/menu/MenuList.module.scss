@@ -59,8 +59,8 @@
 .tabs {
   display: flex;
   align-items: flex-end;
-  gap: 18px;
-  padding: 87px 0 0 52px;
+  gap: 114px;
+  padding: 87px 0 0 70px;
   height: 227px; // 87 gap + 140 tab height
 }
 
@@ -83,6 +83,16 @@
 .tabActive {
   color: #ddb000;
   border-bottom: 3px solid #fed32c;
+}
+
+.tabMultiline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    line-height: 60px;
+  }
 }
 
 // ── 메뉴 스크롤 영역 ──────────────────────────────────────
@@ -284,6 +294,10 @@
   background-color: #fed32c;
   border: none;
   border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 60px;
@@ -292,5 +306,11 @@
   box-shadow:
     0px 8px 4px rgba(207, 205, 197, 0.23),
     inset -2px -5px 8px rgba(83, 72, 26, 0.11);
+}
+
+.cartIcon {
+  width: 83.5px;
+  height: 77px;
+  flex-shrink: 0;
 }
 
