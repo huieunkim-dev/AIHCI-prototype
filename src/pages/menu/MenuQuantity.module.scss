@@ -129,14 +129,14 @@
   border-left: 2px solid rgba(170, 147, 57, 0.37);
   border-right: 2px solid rgba(170, 147, 57, 0.37);
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   gap: 8px;
   flex-shrink: 0;
 
   // 숫자와 "잔" 텍스트 baseline 맞춤
   .qtyNum, .qtyUnit {
-    line-height: 1;
+    line-height: 1.5;
   }
 }
 
@@ -158,55 +158,46 @@
   line-height: normal;
 }
 
-// ── 확인 버튼 (체크 + 텍스트) ─────────────────────────────
-.confirmRow {
-  display: flex;
-  align-items: center;
-  gap: 43px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  flex-shrink: 0;
-  padding: 0;
-}
-
-.checkCircle {
-  width: 97px;
-  height: 97px;
-  background: #c4bdbc;
-  border-radius: 50%;
+// ── 이전으로 버튼 ─────────────────────────────────────────
+.prevBtn {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 32px;
+  width: 340px;
+  height: 109px;
+  background: #faf4dd;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  color: #5a4a10;
+  box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.11);
+}
+
+.prevIcon {
+  width: 33px;
+  height: 64px;
   flex-shrink: 0;
 }
 
-.checkIcon {
-  font-size: 52px;
-  line-height: 1;
-  color: #fff;
-  font-weight: 700;
-}
-
-.confirmText {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 500;
-  font-size: 50px;
-  color: #705c0d;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-// ── 뒤로 가기 버튼 ────────────────────────────────────────
-.backBtn {
+// ── 다음으로 버튼 ─────────────────────────────────────────
+.nextBtn {
   position: absolute;
   left: 70px;
   top: 1534px;
   width: 940px;
   height: 157px;
-  background: #fafafa;
+  background: #fed32c;
   border: none;
   border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 64px;
@@ -214,4 +205,11 @@
   cursor: pointer;
   box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.25);
   z-index: 1;
+}
+
+.nextIcon {
+  width: 33px;
+  height: 64px;
+  flex-shrink: 0;
+  transform: rotate(180deg);
 }
