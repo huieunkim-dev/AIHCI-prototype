@@ -6,6 +6,7 @@ import mascot_png from "../assets/mascot.png";
 import icon_hand_png from "../assets/icon-hand.png";
 import icon_check_filled_svg from "../assets/icon-check-filled.svg";
 import icon_check_outline_svg from "../assets/icon-check-outline.svg";
+import AssistBar from "../components/AssistBar";
 
 const spriteSheet = logo_png;
 const mascotSheet = mascot_png;
@@ -56,6 +57,8 @@ function ModeSelectComplete() {
         </div>
         <span className={styles.menuButtonText}>메뉴 보러 가기</span>
       </button>
+
+      <AssistBar />
     </div>
   );
 }
