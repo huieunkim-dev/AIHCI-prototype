@@ -5,14 +5,19 @@ import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
 import icon_dine_in_svg from "../assets/icon-dine-in.svg";
 import icon_check_filled_svg from "../assets/icon-check-filled.svg";
+import icon_check_filled_hc_svg from "../assets/icon-check-filled-hc.svg";
 import icon_check_outline_svg from "../assets/icon-check-outline.svg";
+import icon_check_outline_hc_svg from "../assets/icon-check-outline-hc.svg";
 import AssistBar from "../components/AssistBar";
+import { useSettings } from "../context/SettingsContext";
 
 const spriteSheet = logo_png;
 const mascotSheet = mascot_png;
 const cupIcon = icon_dine_in_svg;
 const checkTurtle = icon_check_filled_svg;
+const checkTurtleHc = icon_check_filled_hc_svg;
 const checkKorean = icon_check_outline_svg;
+const checkKoreanHc = icon_check_outline_hc_svg;
 
 function ModeSelectComplete() {
   const navigate = useNavigate();
@@ -21,6 +26,7 @@ function ModeSelectComplete() {
   const turtle = state?.turtle ?? false;
   const korean = state?.korean ?? false;
   const orderType = state?.orderType ?? "dine-in";
+  const { highContrast } = useSettings();
 
   return (
     <div className={styles.page}>
@@ -40,13 +46,13 @@ function ModeSelectComplete() {
         <span className={styles.mainTitle}>잘하셨어요!</span>
         {turtle && (
           <div className={styles.checkItem}>
-            <img src={checkTurtle} alt="" />
+            <img src={highContrast ? checkTurtleHc : checkTurtle} alt="" />
             <span>거북이 버전 선택</span>
           </div>
         )}
         {korean && (
           <div className={styles.checkItem}>
-            <img src={checkKorean} alt="" />
+            <img src={highContrast ? checkKoreanHc : checkKorean} alt="" />
             <span>우리말 버전 선택</span>
           </div>
         )}

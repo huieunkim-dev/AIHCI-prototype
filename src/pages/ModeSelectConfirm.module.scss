@@ -31,10 +31,6 @@
     width: auto;
     display: block;
   }
-
-  [data-contrast="high"] & img {
-    filter: brightness(0) invert(1) brightness(0.4863);
-  }
 }
 
 .time {
@@ -299,6 +295,10 @@
 
 .checkButtonActive {
   background-color: #fed32c;
+
+  [data-contrast="high"] & img {
+    filter: brightness(0);
+  }
 }
 
 // ── 확인 버튼 ─────────────────────────────────────────────
@@ -314,18 +314,9 @@
   cursor: pointer;
   background-color: #c5c2b7;
   transition: background-color 0.15s;
-
-  [data-contrast="high"] &:not(.confirmButtonActive) {
-    background-color: #c2c2c2;
-    color: #141414;
-  }
 }
 
 .confirmButtonActive {
   background-color: #fed32c;
   color: #30190b;
-
-  [data-contrast="high"] & {
-    color: #141414;
-  }
 }
