@@ -1,6 +1,7 @@
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import styles from "./MenuDetail.module.scss";
 import { getItemById } from "../../data/menuData";
+import AssistBar from "../../components/AssistBar";
 
 function MenuDetail() {
   const navigate = useNavigate();
@@ -51,10 +52,16 @@ function MenuDetail() {
       {/* 이해했어요! 버튼 */}
       <button
         className={styles.okBtn}
-        onClick={() => fromCart ? navigate(-1) : navigate(`/menu/${id}/temperature`, { state: { orderType } })}
+        onClick={() =>
+          fromCart
+            ? navigate(-1)
+            : navigate(`/menu/${id}/temperature`, { state: { orderType } })
+        }
       >
         이해했어요!
       </button>
+
+      <AssistBar dark />
     </div>
   );
 }
