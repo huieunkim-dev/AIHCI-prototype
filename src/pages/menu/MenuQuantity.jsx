@@ -4,9 +4,12 @@ import styles from "./MenuQuantity.module.scss";
 import { getItemById } from "../../data/menuData";
 import { useCart } from "../../context/CartContext";
 import AssistBar from "../../components/AssistBar";
+import { useSettings } from "../../context/SettingsContext";
 import icon_back_svg from "../../assets/icon-back.svg";
+import icon_back_hc_svg from "../../assets/icon-back-hc.svg";
 
 const iconBack = icon_back_svg;
+const iconBackHc = icon_back_hc_svg;
 
 function MenuQuantity() {
   const navigate = useNavigate();
@@ -16,6 +19,7 @@ function MenuQuantity() {
   const temp = state?.temp ?? "ice";
   const item = getItemById(id);
   const { dispatch } = useCart();
+  const { highContrast } = useSettings();
 
   const [qty, setQty] = useState(1);
 
@@ -89,7 +93,11 @@ function MenuQuantity() {
       {/* 다음으로 */}
       <button className={styles.nextBtn} onClick={handleConfirm}>
         <span>다음으로</span>
-        <img src={iconBack} className={styles.nextIcon} alt="" />
+        <img
+          src={highContrast ? iconBackHc : iconBack}
+          className={styles.nextIcon}
+          alt=""
+        />
       </button>
 
       <AssistBar dark />
