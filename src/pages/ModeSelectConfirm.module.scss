@@ -105,6 +105,11 @@
 
 .optionCardSelected {
   background-color: #fed32c;
+
+  .turtleIcon img,
+  .koreanIcon img {
+    filter: brightness(0);
+  }
 }
 
 .optionInner {
@@ -151,14 +156,15 @@
   }
 }
 
-.koreanPrefix {
-  font-family: 'Ria Sans', serif;
-  font-weight: 700;
-  font-size: 48px;
-  color: #b09012;
-  letter-spacing: -2.4px;
-  white-space: nowrap;
+.koreanIcon {
+  height: 52px;
   flex-shrink: 0;
+
+  img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
 }
 
 .optionName {
