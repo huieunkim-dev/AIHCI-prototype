@@ -106,12 +106,18 @@
   border-radius: 24px;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 30px;
   box-shadow:
     0px 8px 4px rgba(207, 205, 197, 0.23),
     inset -2px -5px 8px rgba(83, 72, 26, 0.11);
+}
+
+.tempIcon {
+  width: 111px;
+  height: 111px;
+  flex-shrink: 0;
 }
 
 .iceBtn {
@@ -155,6 +161,10 @@
   background: #fafafa;
   border: none;
   border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 64px;
@@ -162,4 +172,10 @@
   cursor: pointer;
   box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.25);
   z-index: 1;
+}
+
+.backIcon {
+  width: 33px;
+  height: 64px;
+  flex-shrink: 0;
 }
