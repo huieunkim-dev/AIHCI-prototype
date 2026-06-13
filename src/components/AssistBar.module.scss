@@ -39,6 +39,19 @@
     color: #79745f;
     white-space: nowrap;
   }
+
+  [data-contrast="high"] &:not(.assistButtonActive) {
+    background-color: #35332b;
+    border: 1px solid #d2caac;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+
+    span {
+      color: #fafafa;
+    }
+  }
 }
 
 .assistButtonDark {
