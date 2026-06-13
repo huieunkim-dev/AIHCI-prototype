@@ -75,7 +75,10 @@ function MenuTemperature() {
       </div>
 
       {/* 뒤로 가기 */}
-      <button className={styles.backBtn} onClick={() => navigate(-1)}>
+      <button
+        className={styles.backBtn}
+        onClick={() => navigate("/menu", { state: { orderType } })}
+      >
         <img src={iconBack} className={styles.backIcon} alt="" />
         <span>뒤로 가기</span>
       </button>
