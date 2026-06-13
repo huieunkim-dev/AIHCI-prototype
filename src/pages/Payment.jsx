@@ -4,13 +4,13 @@ import styles from "./Payment.module.scss";
 import { useCart } from "../context/CartContext";
 import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
-import icon_hand_png from "../assets/icon-hand.png";
+import icon_cash_svg from "../assets/icon-cash-dark.svg";
 import icon_check_filled_svg from "../assets/icon-check-filled.svg";
 import icon_check_outline_svg from "../assets/icon-check-outline.svg";
 
 const imgLogo = logo_png;
 const imgMascot = mascot_png;
-const imgTouch = icon_hand_png;
+const imgCash = icon_cash_svg;
 const iconCheck1 = icon_check_filled_svg;
 const iconCheck2 = icon_check_outline_svg;
 
@@ -92,16 +92,12 @@ function Payment() {
       >
         <div className={styles.touchIconWrap}>
           <img
-            src={imgTouch}
+            src={imgCash}
             alt=""
             style={{
-              position: "absolute",
-              width: "263.79%",
-              height: "191.25%",
-              left: "-81.47%",
-              top: "-45.94%",
-              maxWidth: "none",
-              pointerEvents: "none",
+              width: "110px",
+              height: "92px",
+              objectFit: "contain",
             }}
           />
         </div>

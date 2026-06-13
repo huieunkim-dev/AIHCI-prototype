@@ -4,11 +4,13 @@ import styles from "./OrderDone.module.scss";
 import { useCart } from "../context/CartContext";
 import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
-import icon_hand_png from "../assets/icon-hand.png";
+import icon_clock_svg from "../assets/icon-clock.svg";
+import icon_home_svg from "../assets/icon-home.svg";
 
 const imgLogo = logo_png;
 const imgMascot = mascot_png;
-const imgHand = icon_hand_png;
+const iconClock = icon_clock_svg;
+const iconHome = icon_home_svg;
 
 function OrderDone() {
   const navigate = useNavigate();
@@ -55,18 +57,14 @@ function OrderDone() {
 
       {/* 예상 대기시간 카드 */}
       <div className={styles.waitCard}>
-        <div className={styles.handIcon}>
+        <div className={styles.clockIcon}>
           <img
-            src={imgHand}
+            src={iconClock}
             alt=""
             style={{
-              position: "absolute",
-              width: "263.79%",
-              height: "191.25%",
-              left: "-81.47%",
-              top: "-45.94%",
-              maxWidth: "none",
-              pointerEvents: "none",
+              width: "146px",
+              height: "129px",
+              objectFit: "contain",
             }}
           />
         </div>
@@ -78,18 +76,14 @@ function OrderDone() {
 
       {/* 처음 화면으로 돌아가기 버튼 */}
       <button className={styles.backBtn} onClick={handleHome}>
-        <div className={styles.handIcon}>
+        <div className={styles.homeIcon}>
           <img
-            src={imgHand}
+            src={iconHome}
             alt=""
             style={{
-              position: "absolute",
-              width: "263.79%",
-              height: "191.25%",
-              left: "-81.47%",
-              top: "-45.94%",
-              maxWidth: "none",
-              pointerEvents: "none",
+              width: "77px",
+              height: "75px",
+              objectFit: "contain",
             }}
           />
         </div>

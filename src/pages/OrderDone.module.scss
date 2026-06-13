@@ -101,11 +101,18 @@
     inset -2px -5px 8px rgba(83, 72, 26, 0.25);
 }
 
-// ── 핸드 아이콘 ───────────────────────────────────────────
-.handIcon {
+.clockIcon {
   position: relative;
-  width: 84px;
-  height: 116px;
+  width: 146px;
+  height: 129px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.homeIcon{
+  position: relative;
+  width: 77px;
+  height: 75px;
   overflow: hidden;
   flex-shrink: 0;
 }
