@@ -82,7 +82,7 @@
 .itemRow {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 31px;
   width: 100%;
   flex-shrink: 0;
@@ -187,52 +187,20 @@
 .itemDetail {
   font-family: 'Pretendard', sans-serif;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 32px;
   color: #79745e;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.8px;
   line-height: 40px;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  text-align: left;
+  text-align: right;
+  flex-shrink: 0;
 }
 
 .arrow {
   color: #ddb000;
-}
-
-// 수량 조절
-.qtyControl {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  flex-shrink: 0;
-}
-
-.qtyBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.qtyIcon {
-  width: 50px;
-  height: 50px;
-  display: block;
-}
-
-.qtyNum {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 600;
-  font-size: 64px;
-  color: #241613;
-  letter-spacing: -1.6px;
-  line-height: 60px;
-  min-width: 48px;
-  text-align: center;
 }
 
 // ── 요약 + 버튼 영역 ──────────────────────────────────────

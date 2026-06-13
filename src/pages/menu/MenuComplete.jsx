@@ -7,6 +7,7 @@ import mascot_png from "../../assets/mascot.png";
 import icon_hand_png from "../../assets/icon-hand.png";
 import icon_check_filled_svg from "../../assets/icon-check-filled.svg";
 import icon_check_outline_svg from "../../assets/icon-check-outline.svg";
+import AssistBar from "../../components/AssistBar";
 
 // 로고 텍스트 (Splash와 동일한 sprite)
 const imgLogo = logo_png;
@@ -94,6 +95,8 @@ function MenuComplete() {
         </div>
         <span>메뉴창 마저 보기</span>
       </button>
+
+      <AssistBar />
     </div>
   );
 }
