@@ -85,7 +85,7 @@
 // ── Mascot (sprite-sheet, 598 × 624px viewport) ───────────
 .mascot {
   position: absolute;
-  top: 737px;
+  top: 789px;
   left: calc(50% + 168px);
   transform: translateX(-50%);
   width: 598px;
@@ -106,7 +106,7 @@
 // ── Buttons ───────────────────────────────────────────────
 .buttons {
   position: absolute;
-  bottom: 148px;
+  top: 1413px;
   left: 52px;
   width: 976px;
   display: flex;
@@ -116,6 +116,10 @@
 .button {
   flex: 1;
   height: 229px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
   background-color: #fed32c;
   border: none;
   border-radius: 24px;
@@ -131,4 +135,81 @@
   &:active {
     filter: brightness(0.95);
   }
+}
+
+.buttonIconDineIn {
+  width: 72.194px;
+  height: 35px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.buttonIconTakeout {
+  width: 51px;
+  height: 59px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+// ── 리모컨 사용하기 버튼 ────────────────────────────────────
+.remoteButton {
+  position: absolute;
+  top: 1707px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  background-color: #e8e8e8;
+  border: none;
+  border-radius: 10px;
+  padding: 24px 40px;
+  cursor: pointer;
+
+  &:active {
+    filter: brightness(0.97);
+  }
+}
+
+.remoteIcon {
+  width: 63px;
+  height: 63px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.remoteText {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  white-space: nowrap;
+  color: #241613;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.remoteTextMain {
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0;
+}
+
+.remoteTextSub {
+  font-weight: 600;
+  font-size: 40px;
+  margin: 0;
 }

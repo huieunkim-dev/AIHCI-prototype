@@ -1,0 +1,156 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #4d4c45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.content {
+  position: absolute;
+  left: 70px;
+  top: 166px;
+  width: 940px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.card {
+  background-color: #fafafa;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 94px;
+  padding: 75px 24px;
+  width: 100%;
+}
+
+// ── 헤더 ──────────────────────────────────────────────────
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  width: 892px;
+}
+
+.title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  letter-spacing: -2px;
+  color: #241613;
+  text-align: center;
+  margin: 0;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #e9dfb8;
+}
+
+// ── 리모컨 일러스트 ────────────────────────────────────────
+.illustration {
+  position: relative;
+  width: 434px;
+  height: 681px;
+  overflow: hidden;
+}
+
+// ── 단계 설명 ─────────────────────────────────────────────
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 270px;
+}
+
+.stepThumb {
+  position: relative;
+  width: 194px;
+  height: 157px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.stepLabel {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -1px;
+  color: #241613;
+  text-align: center;
+  margin: 0;
+}
+
+.stepArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 45px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+// ── 이해했어요 버튼 ────────────────────────────────────────
+.confirmButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  height: 157px;
+  width: 100%;
+  background-color: #fed32c;
+  border: none;
+  border-radius: 24px;
+  padding: 34px 166px;
+  cursor: pointer;
+  box-shadow:
+    0px 8px 4px rgba(207, 205, 197, 0.23),
+    inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+
+  &:active {
+    filter: brightness(0.95);
+  }
+}
+
+.confirmIcon {
+  width: 89px;
+  height: 89px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.confirmButton span {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #30190b;
+  white-space: nowrap;
+}
