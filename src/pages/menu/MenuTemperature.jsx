@@ -2,11 +2,14 @@ import { useNavigate, useParams, useLocation } from "react-router-dom";
 import styles from "./MenuTemperature.module.scss";
 import { getItemById } from "../../data/menuData";
 import AssistBar from "../../components/AssistBar";
+import { useSettings } from "../../context/SettingsContext";
 import icon_back_svg from "../../assets/icon-back.svg";
+import icon_back_hc_svg from "../../assets/icon-back-hc.svg";
 import icon_ice_svg from "../../assets/icon-ice.svg";
 import icon_hot_svg from "../../assets/icon-hot.svg";
 
 const iconBack = icon_back_svg;
+const iconBackHc = icon_back_hc_svg;
 const iconIce = icon_ice_svg;
 const iconHot = icon_hot_svg;
 
@@ -16,6 +19,7 @@ function MenuTemperature() {
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const item = getItemById(id);
+  const { highContrast } = useSettings();
 
   function handleTemp(temp) {
     navigate(`/menu/${id}/quantity`, { state: { orderType, temp } });
@@ -79,7 +83,11 @@ function MenuTemperature() {
         className={styles.backBtn}
         onClick={() => navigate("/menu", { state: { orderType } })}
       >
-        <img src={iconBack} className={styles.backIcon} alt="" />
+        <img
+          src={highContrast ? iconBackHc : iconBack}
+          className={styles.backIcon}
+          alt=""
+        />
         <span>뒤로 가기</span>
       </button>
 
