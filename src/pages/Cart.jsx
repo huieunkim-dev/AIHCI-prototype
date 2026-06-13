@@ -2,15 +2,19 @@ import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Cart.module.scss";
 import { useCart } from "../context/CartContext";
 import icon_minus_svg from "../assets/icon-minus.svg";
+import icon_minus_hc_svg from "../assets/icon-minus-hc.svg";
 import AssistBar from "../components/AssistBar";
+import { useSettings } from "../context/SettingsContext";
 
 const imgRemove = icon_minus_svg;
+const imgRemoveHc = icon_minus_hc_svg;
 
 function Cart() {
   const navigate = useNavigate();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const { items, total, dispatch } = useCart();
+  const { highContrast } = useSettings();
 
   function removeItem(id) {
     dispatch({ type: "REMOVE", id });
@@ -42,7 +46,7 @@ function Cart() {
                   onClick={() => removeItem(item.id)}
                 >
                   <img
-                    src={imgRemove}
+                    src={highContrast ? imgRemoveHc : imgRemove}
                     alt="삭제"
                     className={styles.removeIcon}
                   />
