@@ -48,3 +48,15 @@
     color: #4d4c47;
   }
 }
+
+.assistButtonActive {
+  background-color: #fed32c;
+
+  span {
+    color: #30190b;
+  }
+
+  img {
+    filter: brightness(0);
+  }
+}

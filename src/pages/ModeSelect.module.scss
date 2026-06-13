@@ -27,6 +27,10 @@
     width: auto;
     display: block;
   }
+
+  [data-contrast="high"] & img {
+    filter: brightness(0) invert(1) brightness(0.4863);
+  }
 }
 
 .time {

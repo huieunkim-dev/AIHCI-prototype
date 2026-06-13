@@ -6,19 +6,25 @@ import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
 import icon_dine_in_svg from "../assets/icon-dine-in.svg";
 import icon_takeout_svg from "../assets/icon-takeout.svg";
+import icon_takeout_hc_svg from "../assets/icon-takeout-hc.svg";
 import icon_remote_svg from "../assets/icon-remote.svg";
+import icon_remote_hc_svg from "../assets/icon-remote-hc.svg";
 import RemoteGuideModal from "../components/RemoteGuideModal";
+import { useSettings } from "../context/SettingsContext";
 
 const logo = logo_png;
 const mascotSheet = mascot_png;
 const iconDineIn = icon_dine_in_svg;
 const iconTakeout = icon_takeout_svg;
+const iconTakeoutHc = icon_takeout_hc_svg;
 const iconRemote = icon_remote_svg;
+const iconRemoteHc = icon_remote_hc_svg;
 
 function Splash() {
   const navigate = useNavigate();
   const time = useKoreanTime();
   const [showRemoteGuide, setShowRemoteGuide] = useState(false);
+  const { highContrast } = useSettings();
 
   return (
     <div className={styles.page}>
@@ -58,7 +64,7 @@ function Splash() {
           }
         >
           <div className={styles.buttonIconTakeout}>
-            <img src={iconTakeout} alt="" />
+            <img src={highContrast ? iconTakeoutHc : iconTakeout} alt="" />
           </div>
           포장해요
         </button>
@@ -69,7 +75,7 @@ function Splash() {
         onClick={() => setShowRemoteGuide(true)}
       >
         <div className={styles.remoteIcon}>
-          <img src={iconRemote} alt="" />
+          <img src={highContrast ? iconRemoteHc : iconRemote} alt="" />
         </div>
         <div className={styles.remoteText}>
           <p className={styles.remoteTextMain}>리모컨 사용하기</p>
