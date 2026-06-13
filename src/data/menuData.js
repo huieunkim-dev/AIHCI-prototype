@@ -1,11 +1,19 @@
 import icon_sugar_svg from "../assets/icon-sugar.svg";
+import icon_sugar_hc_svg from "../assets/icon-sugar-hc.svg";
 import icon_no_sugar_svg from "../assets/icon-no-sugar.svg";
+import icon_no_sugar_hc_svg from "../assets/icon-no-sugar-hc.svg";
 import icon_coffee_bean_svg from "../assets/icon-coffee-bean.svg";
+import icon_coffee_bean_hc_svg from "../assets/icon-coffee-bean-hc.svg";
 import icon_no_coffee_bean_svg from "../assets/icon-no-coffee-bean.svg";
+import icon_no_coffee_bean_hc_svg from "../assets/icon-no-coffee-bean-hc.svg";
 import icon_chocolate_svg from "../assets/icon-chocolate.svg";
+import icon_chocolate_hc_svg from "../assets/icon-chocolate-hc.svg";
 import icon_fruit_svg from "../assets/icon-fruit.svg";
+import icon_fruit_hc_svg from "../assets/icon-fruit-hc.svg";
 import icon_milk_svg from "../assets/icon-milk.svg";
+import icon_milk_hc_svg from "../assets/icon-milk-hc.svg";
 import icon_sparkling_svg from "../assets/icon-sparkling.svg";
+import icon_sparkling_hc_svg from "../assets/icon-sparkling-hc.svg";
 import menu_big_coffee_png from "../assets/menu-big-coffee.png";
 import menu_coffee_png from "../assets/menu-coffee.png";
 import menu_decaf_milk_png from "../assets/menu-decaf-milk.png";
@@ -22,6 +30,17 @@ const iconChocolate = icon_chocolate_svg;
 const iconFruit = icon_fruit_svg;
 const iconMilk = icon_milk_svg;
 const iconSparkling = icon_sparkling_svg;
+
+export const HC_ICON_MAP = new Map([
+  [icon_sugar_svg, icon_sugar_hc_svg],
+  [icon_no_sugar_svg, icon_no_sugar_hc_svg],
+  [icon_coffee_bean_svg, icon_coffee_bean_hc_svg],
+  [icon_no_coffee_bean_svg, icon_no_coffee_bean_hc_svg],
+  [icon_chocolate_svg, icon_chocolate_hc_svg],
+  [icon_fruit_svg, icon_fruit_hc_svg],
+  [icon_milk_svg, icon_milk_hc_svg],
+  [icon_sparkling_svg, icon_sparkling_hc_svg],
+]);
 
 export const MENU_ITEMS = [
   {
