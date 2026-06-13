@@ -6,16 +6,20 @@ import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
 import icon_clock_svg from "../assets/icon-clock.svg";
 import icon_home_svg from "../assets/icon-home.svg";
+import icon_home_hc_svg from "../assets/icon-home-hc.svg";
+import { useSettings } from "../context/SettingsContext";
 
 const imgLogo = logo_png;
 const imgMascot = mascot_png;
 const iconClock = icon_clock_svg;
 const iconHome = icon_home_svg;
+const iconHomeHc = icon_home_hc_svg;
 
 function OrderDone() {
   const navigate = useNavigate();
   const time = useKoreanTime();
   const { dispatch } = useCart();
+  const { highContrast } = useSettings();
 
   const handleHome = () => {
     dispatch({ type: "CLEAR" });
@@ -78,7 +82,7 @@ function OrderDone() {
       <button className={styles.backBtn} onClick={handleHome}>
         <div className={styles.homeIcon}>
           <img
-            src={iconHome}
+            src={highContrast ? iconHomeHc : iconHome}
             alt=""
             style={{
               width: "77px",
