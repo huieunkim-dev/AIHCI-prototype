@@ -9,12 +9,12 @@ const iconCallStaff = icon_call_staff_svg;
 const iconVoiceSupport = icon_voice_support_svg;
 const iconContrast = icon_contrast_svg;
 
-function AssistBar() {
+function AssistBar({ inline = false }) {
   const [showStaffCall, setShowStaffCall] = useState(false);
 
   return (
     <>
-      <div className={styles.bottomBar}>
+      <div className={inline ? styles.bottomBarInline : styles.bottomBar}>
         <button
           className={styles.assistButton}
           onClick={() => setShowStaffCall(true)}

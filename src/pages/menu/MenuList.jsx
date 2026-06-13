@@ -6,6 +6,7 @@ import { CATEGORIES, getItemsByCategory } from "../../data/menuData";
 import { useCart } from "../../context/CartContext";
 import icon_back_svg from "../../assets/icon-back.svg";
 import scroll_arrow_down_svg from "../../assets/scroll-arrow-down.svg";
+import AssistBar from "../../components/AssistBar";
 
 const iconBack = icon_back_svg;
 const iconArrow = scroll_arrow_down_svg;
@@ -166,11 +167,7 @@ function MenuList() {
             담은 상품 보기
           </button>
         </div>
-        <div className={styles.bottomActions}>
-          <button className={styles.actionBtn}>직원 부르기</button>
-          <button className={styles.actionBtn}>크게 보기</button>
-          <button className={styles.actionBtn}>고대비</button>
-        </div>
+        <AssistBar inline />
       </div>
     </div>
   );
