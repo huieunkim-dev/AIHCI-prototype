@@ -8,9 +8,9 @@ import icon_hand_png from "../assets/icon-hand.png";
 import icon_check_filled_svg from "../assets/icon-check-filled.svg";
 import icon_check_outline_svg from "../assets/icon-check-outline.svg";
 
-const imgLogo   = logo_png;
+const imgLogo = logo_png;
 const imgMascot = mascot_png;
-const imgTouch  = icon_hand_png;
+const imgTouch = icon_hand_png;
 const iconCheck1 = icon_check_filled_svg;
 const iconCheck2 = icon_check_outline_svg;
 
@@ -30,29 +30,26 @@ function Payment() {
       {/* 상단 헤더 */}
       <div className={styles.header}>
         <div className={styles.logoWrap}>
-          <img src={imgLogo} alt="MEGA COFFEE" style={{
-            position: "absolute",
-            width: "301.44%",
-            height: "1206.03%",
-            left: "-101.03%",
-            top: "-691.09%",
-            maxWidth: "none",
-          }} />
+          <img src={imgLogo} alt="MEGA COFFEE" />
         </div>
         <span className={styles.time}>{time}</span>
       </div>
 
       {/* 마스코트 */}
       <div className={styles.mascotWrap}>
-        <img src={imgMascot} alt="" style={{
-          position: "absolute",
-          width: "439.44%",
-          height: "280.07%",
-          left: "-304.47%",
-          top: "-5.76%",
-          maxWidth: "none",
-          pointerEvents: "none",
-        }} />
+        <img
+          src={imgMascot}
+          alt=""
+          style={{
+            position: "absolute",
+            width: "439.44%",
+            height: "280.07%",
+            left: "-304.47%",
+            top: "-5.76%",
+            maxWidth: "none",
+            pointerEvents: "none",
+          }}
+        />
       </div>
 
       {/* 중앙 텍스트 */}
@@ -94,15 +91,19 @@ function Payment() {
         onClick={() => navigate("/payment/card", { state: { orderType } })}
       >
         <div className={styles.touchIconWrap}>
-          <img src={imgTouch} alt="" style={{
-            position: "absolute",
-            width: "263.79%",
-            height: "191.25%",
-            left: "-81.47%",
-            top: "-45.94%",
-            maxWidth: "none",
-            pointerEvents: "none",
-          }} />
+          <img
+            src={imgTouch}
+            alt=""
+            style={{
+              position: "absolute",
+              width: "263.79%",
+              height: "191.25%",
+              left: "-81.47%",
+              top: "-45.94%",
+              maxWidth: "none",
+              pointerEvents: "none",
+            }}
+          />
         </div>
         <span>결제하러 가기</span>
       </button>

@@ -6,10 +6,10 @@ import icon_card_svg from "../assets/icon-card.svg";
 import icon_coupon_svg from "../assets/icon-coupon.svg";
 import icon_cash_svg from "../assets/icon-cash.svg";
 
-const imgLogo     = logo_png;
-const iconCard    = icon_card_svg;
-const iconCoupon  = icon_coupon_svg;
-const iconCash    = icon_cash_svg;
+const imgLogo = logo_png;
+const iconCard = icon_card_svg;
+const iconCoupon = icon_coupon_svg;
+const iconCash = icon_cash_svg;
 
 function PaymentCard() {
   const navigate = useNavigate();
@@ -22,14 +22,7 @@ function PaymentCard() {
       {/* 상단 헤더 */}
       <div className={styles.header}>
         <div className={styles.logoWrap}>
-          <img src={imgLogo} alt="MEGA COFFEE" style={{
-            position: "absolute",
-            width: "301.44%",
-            height: "1206.03%",
-            left: "-101.03%",
-            top: "-691.09%",
-            maxWidth: "none",
-          }} />
+          <img src={imgLogo} alt="MEGA COFFEE" />
         </div>
         <span className={styles.time}>{time}</span>
       </div>
@@ -44,7 +37,11 @@ function PaymentCard() {
       {/* 카드 버튼 (왼쪽 큰 버튼) */}
       <button
         className={styles.cardBtn}
-        onClick={() => navigate("/payment/complete", { state: { orderType, method: "card" } })}
+        onClick={() =>
+          navigate("/payment/complete", {
+            state: { orderType, method: "card" },
+          })
+        }
       >
         <div className={styles.cardIconWrap}>
           <img src={iconCard} alt="" className={styles.methodIcon} />

@@ -6,14 +6,10 @@ import icon_back_svg from "../assets/icon-back.svg";
 import icon_mic_svg from "../assets/icon-mic.svg";
 import icon_person_svg from "../assets/icon-person.svg";
 
-const spriteSheet =
-  logo_png;
-const iconBack =
-  icon_back_svg;
-const iconMic =
-  icon_mic_svg;
-const iconPerson =
-  icon_person_svg;
+const spriteSheet = logo_png;
+const iconBack = icon_back_svg;
+const iconMic = icon_mic_svg;
+const iconPerson = icon_person_svg;
 
 function ModeSelect() {
   const navigate = useNavigate();
@@ -23,12 +19,7 @@ function ModeSelect() {
     <div className={styles.page}>
       <div className={styles.topBar}>
         <div className={styles.logo}>
-          <div className={styles.logoIcon}>
-            <img src={spriteSheet} alt="" />
-          </div>
-          <div className={styles.logoText}>
-            <img src={spriteSheet} alt="MEGA COFFEE" />
-          </div>
+          <img src={spriteSheet} alt="MEGA COFFEE" />
         </div>
         <span className={styles.time}>{time}</span>
       </div>

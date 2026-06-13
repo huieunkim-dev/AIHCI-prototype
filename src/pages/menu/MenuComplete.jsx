@@ -30,14 +30,7 @@ function MenuComplete() {
       {/* 상단 헤더 */}
       <div className={styles.header}>
         <div className={styles.logoWrap}>
-          <img src={imgLogo} alt="MEGA COFFEE" style={{
-            position: "absolute",
-            width: "301.44%",
-            height: "1206.03%",
-            left: "-101.03%",
-            top: "-691.09%",
-            maxWidth: "none",
-          }} />
+          <img src={imgLogo} alt="MEGA COFFEE" />
         </div>
         <span className={styles.time}>{time}</span>
       </div>

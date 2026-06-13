@@ -20,10 +20,15 @@
 }
 
 .logoWrap {
-  position: relative;
-  width: 280px;
-  height: 39px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 51px;
+
+  img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
 }
 
 .time {

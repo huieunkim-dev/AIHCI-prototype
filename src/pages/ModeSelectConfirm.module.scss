@@ -18,19 +18,14 @@
 }
 
 .logoText {
-  position: relative;
-  width: 280px;
-  height: 39px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 51px;
 
   img {
-    position: absolute;
-    width: 301.44%;
-    height: 1206.03%;
-    left: -101.03%;
-    top: -691.09%;
-    max-width: none;
-    pointer-events: none;
+    height: 100%;
+    width: auto;
+    display: block;
   }
 }
 

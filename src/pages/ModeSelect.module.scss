@@ -20,43 +20,12 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 13px;
-  height: 78px;
-}
-
-.logoIcon {
-  position: relative;
-  width: 50px;
-  height: 78.571px;
-  flex-shrink: 0;
-  overflow: hidden;
+  height: 51px;
 
   img {
-    position: absolute;
-    width: 1205.75%;
-    height: 427.59%;
-    left: -552.69%;
-    top: -135.02%;
-    max-width: none;
-    pointer-events: none;
-  }
-}
-
-.logoText {
-  position: relative;
-  width: 184px;
-  height: 26px;
-  flex-shrink: 0;
-  overflow: hidden;
-
-  img {
-    position: absolute;
-    width: 301.44%;
-    height: 1206.03%;
-    left: -101.03%;
-    top: -691.09%;
-    max-width: none;
-    pointer-events: none;
+    height: 100%;
+    width: auto;
+    display: block;
   }
 }
 
