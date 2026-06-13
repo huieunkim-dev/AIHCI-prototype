@@ -9,10 +9,8 @@ import icon_takeout_svg from "../assets/icon-takeout.svg";
 import icon_remote_svg from "../assets/icon-remote.svg";
 import RemoteGuideModal from "../components/RemoteGuideModal";
 
-const spriteSheet =
-  logo_png;
-const mascotSheet =
-  mascot_png;
+const logo = logo_png;
+const mascotSheet = mascot_png;
 const iconDineIn = icon_dine_in_svg;
 const iconTakeout = icon_takeout_svg;
 const iconRemote = icon_remote_svg;
@@ -26,12 +24,7 @@ function Splash() {
     <div className={styles.page}>
       <div className={styles.topBar}>
         <div className={styles.logo}>
-          <div className={styles.logoIcon}>
-            <img src={spriteSheet} alt="" />
-          </div>
-          <div className={styles.logoText}>
-            <img src={spriteSheet} alt="MEGA COFFEE" />
-          </div>
+          <img src={logo} alt="MEGA COFFEE" />
         </div>
         <span className={styles.time}>{time}</span>
       </div>
