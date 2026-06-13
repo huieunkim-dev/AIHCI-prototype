@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./OrderConfirm.module.scss";
 import { useCart } from "../context/CartContext";
+import AssistBar from "../components/AssistBar";
 
 function OrderConfirm() {
   const navigate = useNavigate();
@@ -105,6 +106,8 @@ function OrderConfirm() {
       <button className={styles.backBtn} onClick={() => navigate(-1)}>
         뒤로 가기
       </button>
+
+      <AssistBar dark />
     </div>
   );
 }
