@@ -28,6 +28,10 @@
   gap: 94px;
   padding: 75px 24px;
   width: 100%;
+
+  [data-contrast="high"] & {
+    background-color: #1a1810;
+  }
 }
 
 // ── 헤더 ──────────────────────────────────────────────────
@@ -48,12 +52,20 @@
   color: #241613;
   text-align: center;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .divider {
   width: 100%;
   height: 2px;
   background-color: #e9dfb8;
+
+  [data-contrast="high"] & {
+    background-color: rgba(210, 202, 172, 0.3);
+  }
 }
 
 // ── 리모컨 일러스트 ────────────────────────────────────────
@@ -62,6 +74,10 @@
   width: 434px;
   height: 681px;
   overflow: hidden;
+
+  [data-contrast="high"] & img {
+    filter: grayscale(0.8) brightness(1.0);
+  }
 }
 
 // ── 단계 설명 ─────────────────────────────────────────────
@@ -87,6 +103,10 @@
   height: 157px;
   border-radius: 24px;
   overflow: hidden;
+
+  [data-contrast="high"] & img {
+    filter: grayscale(0.8) brightness(1.0);
+  }
 }
 
 .stepLabel {
@@ -96,7 +116,12 @@
   letter-spacing: -1px;
   color: #241613;
   text-align: center;
+  white-space: nowrap;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .stepArrow {
@@ -134,6 +159,11 @@
   &:active {
     filter: brightness(0.95);
   }
+
+  [data-contrast="high"] & {
+    background-color: #1a1810;
+    box-shadow: none;
+  }
 }
 
 .confirmIcon {
@@ -154,4 +184,8 @@
   font-size: 64px;
   color: #30190b;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }

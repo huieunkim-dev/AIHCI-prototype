@@ -1,21 +1,27 @@
 import styles from "./RemoteGuideModal.module.scss";
 import icon_remote_svg from "../assets/icon-remote.svg";
 import icon_step_arrow_svg from "../assets/icon-step-arrow.svg";
+import icon_step_arrow_hc_svg from "../assets/icon-step-arrow-hc.svg";
 import icon_confirm_check_svg from "../assets/icon-confirm-check.svg";
+import icon_confirm_check_hc_svg from "../assets/icon-confirm-check-hc.svg";
 import remote_illustration_main_png from "../assets/remote-illustration-main.png";
 import remote_illustration_step1_png from "../assets/remote-illustration-step1.png";
 import remote_illustration_step2_png from "../assets/remote-illustration-step2.png";
 import remote_illustration_step3_png from "../assets/remote-illustration-step3.png";
+import { useSettings } from "../context/SettingsContext";
 
 const iconRemote = icon_remote_svg;
 const iconStepArrow = icon_step_arrow_svg;
+const iconStepArrowHc = icon_step_arrow_hc_svg;
 const iconConfirmCheck = icon_confirm_check_svg;
+const iconConfirmCheckHc = icon_confirm_check_hc_svg;
 const imgRemoteMain = remote_illustration_main_png;
 const imgRemoteStep1 = remote_illustration_step1_png;
 const imgRemoteStep2 = remote_illustration_step2_png;
 const imgRemoteStep3 = remote_illustration_step3_png;
 
 function RemoteGuideModal({ onClose }) {
+  const { highContrast } = useSettings();
   return (
     <div className={styles.overlay}>
       <div className={styles.content}>
@@ -44,7 +50,7 @@ function RemoteGuideModal({ onClose }) {
             </div>
 
             <div className={styles.stepArrow}>
-              <img src={iconStepArrow} alt="" />
+              <img src={highContrast ? iconStepArrowHc : iconStepArrow} alt="" />
             </div>
 
             <div className={styles.step}>
@@ -58,7 +64,7 @@ function RemoteGuideModal({ onClose }) {
             </div>
 
             <div className={styles.stepArrow}>
-              <img src={iconStepArrow} alt="" />
+              <img src={highContrast ? iconStepArrowHc : iconStepArrow} alt="" />
             </div>
 
             <div className={styles.step}>
@@ -75,7 +81,7 @@ function RemoteGuideModal({ onClose }) {
 
         <button className={styles.confirmButton} onClick={onClose}>
           <div className={styles.confirmIcon}>
-            <img src={iconConfirmCheck} alt="" />
+            <img src={highContrast ? iconConfirmCheckHc : iconConfirmCheck} alt="" />
           </div>
           <span>이해했어요!</span>
         </button>
