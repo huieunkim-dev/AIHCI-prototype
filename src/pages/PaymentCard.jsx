@@ -4,18 +4,24 @@ import styles from "./PaymentCard.module.scss";
 import logo_png from "../assets/logo.png";
 import icon_card_svg from "../assets/icon-card.svg";
 import icon_coupon_svg from "../assets/icon-coupon.svg";
+import icon_coupon_hc_svg from "../assets/icon-coupon-hc.svg";
 import icon_cash_svg from "../assets/icon-cash.svg";
+import icon_cash_hc_svg from "../assets/icon-cash-hc.svg";
+import { useSettings } from "../context/SettingsContext";
 
 const imgLogo = logo_png;
 const iconCard = icon_card_svg;
 const iconCoupon = icon_coupon_svg;
+const iconCouponHc = icon_coupon_hc_svg;
 const iconCash = icon_cash_svg;
+const iconCashHc = icon_cash_hc_svg;
 
 function PaymentCard() {
   const navigate = useNavigate();
   const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
+  const { highContrast } = useSettings();
 
   return (
     <div className={styles.page}>
@@ -58,7 +64,11 @@ function PaymentCard() {
         style={{ top: "617px" }}
       >
         <div className={styles.sideBtnInner}>
-          <img src={iconCoupon} alt="" className={styles.sideIcon} />
+          <img
+            src={highContrast ? iconCouponHc : iconCoupon}
+            alt=""
+            className={styles.sideIcon}
+          />
           <div className={styles.sideLabels}>
             <span className={styles.sideMain}>쿠폰/교환권</span>
             <span className={styles.sideSub}>모바일 제품 교환권</span>
@@ -72,7 +82,11 @@ function PaymentCard() {
         style={{ top: "1036px" }}
       >
         <div className={styles.sideBtnInner}>
-          <img src={iconCash} alt="" className={styles.sideIcon} />
+          <img
+            src={highContrast ? iconCashHc : iconCash}
+            alt=""
+            className={styles.sideIcon}
+          />
           <div className={styles.sideLabels}>
             <span className={styles.sideMain}>현금결제</span>
             <span className={styles.sideSub}>카운터에서 주문해주세요</span>
