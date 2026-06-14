@@ -1,0 +1,75 @@
+// ── 하단 보조 버튼 ────────────────────────────────────────
+.bottomBar {
+  position: absolute;
+  top: 1794px;
+  left: 52px;
+  width: 976px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottomBarInline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.assistButton {
+  background-color: #e7e4da;
+  border: none;
+  border-radius: 24px;
+  padding: 18px 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+
+  img {
+    flex-shrink: 0;
+  }
+
+  span {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    letter-spacing: -1.2px;
+    color: #79745f;
+    white-space: nowrap;
+  }
+
+  [data-contrast="high"] &:not(.assistButtonActive) {
+    background-color: #35332b;
+    border: 1px solid #d2caac;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+
+    span {
+      color: #fafafa;
+    }
+  }
+}
+
+.assistButtonDark {
+  background-color: #bfb385;
+
+  span {
+    color: #4d4c47;
+  }
+}
+
+.assistButtonActive {
+  background-color: #fed32c;
+
+  span {
+    color: #30190b;
+  }
+
+  img {
+    filter: brightness(0);
+  }
+}

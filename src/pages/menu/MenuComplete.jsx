@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import useKoreanTime from "../../hooks/useKoreanTime";
 import styles from "./MenuComplete.module.scss";
 import { useCart } from "../../context/CartContext";
 import logo_png from "../../assets/logo.png";
@@ -6,6 +7,7 @@ import mascot_png from "../../assets/mascot.png";
 import icon_hand_png from "../../assets/icon-hand.png";
 import icon_check_filled_svg from "../../assets/icon-check-filled.svg";
 import icon_check_outline_svg from "../../assets/icon-check-outline.svg";
+import AssistBar from "../../components/AssistBar";
 
 // 로고 텍스트 (Splash와 동일한 sprite)
 const imgLogo = logo_png;
@@ -19,6 +21,7 @@ const iconCheck2 = icon_check_outline_svg;
 
 function MenuComplete() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const { items } = useCart();
@@ -28,16 +31,9 @@ function MenuComplete() {
       {/* 상단 헤더 */}
       <div className={styles.header}>
         <div className={styles.logoWrap}>
-          <img src={imgLogo} alt="MEGA COFFEE" style={{
-            position: "absolute",
-            width: "301.44%",
-            height: "1206.03%",
-            left: "-101.03%",
-            top: "-691.09%",
-            maxWidth: "none",
-          }} />
+          <img src={imgLogo} alt="MEGA COFFEE" />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 마스코트 */}
@@ -99,6 +95,8 @@ function MenuComplete() {
         </div>
         <span>메뉴창 마저 보기</span>
       </button>
+
+      <AssistBar />
     </div>
   );
 }

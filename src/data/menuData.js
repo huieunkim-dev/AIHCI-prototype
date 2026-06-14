@@ -1,5 +1,19 @@
+import icon_sugar_svg from "../assets/icon-sugar.svg";
+import icon_sugar_hc_svg from "../assets/icon-sugar-hc.svg";
 import icon_no_sugar_svg from "../assets/icon-no-sugar.svg";
+import icon_no_sugar_hc_svg from "../assets/icon-no-sugar-hc.svg";
 import icon_coffee_bean_svg from "../assets/icon-coffee-bean.svg";
+import icon_coffee_bean_hc_svg from "../assets/icon-coffee-bean-hc.svg";
+import icon_no_coffee_bean_svg from "../assets/icon-no-coffee-bean.svg";
+import icon_no_coffee_bean_hc_svg from "../assets/icon-no-coffee-bean-hc.svg";
+import icon_chocolate_svg from "../assets/icon-chocolate.svg";
+import icon_chocolate_hc_svg from "../assets/icon-chocolate-hc.svg";
+import icon_fruit_svg from "../assets/icon-fruit.svg";
+import icon_fruit_hc_svg from "../assets/icon-fruit-hc.svg";
+import icon_milk_svg from "../assets/icon-milk.svg";
+import icon_milk_hc_svg from "../assets/icon-milk-hc.svg";
+import icon_sparkling_svg from "../assets/icon-sparkling.svg";
+import icon_sparkling_hc_svg from "../assets/icon-sparkling-hc.svg";
 import menu_big_coffee_png from "../assets/menu-big-coffee.png";
 import menu_coffee_png from "../assets/menu-coffee.png";
 import menu_decaf_milk_png from "../assets/menu-decaf-milk.png";
@@ -7,8 +21,26 @@ import menu_vanilla_almond_png from "../assets/menu-vanilla-almond.png";
 import menu_watermelon_juice_png from "../assets/menu-watermelon-juice.png";
 import menu_grapefruit_soda_png from "../assets/menu-grapefruit-soda.png";
 import menu_choco_honey_png from "../assets/menu-choco-honey.png";
+
+const iconSugar = icon_sugar_svg;
 const iconNoSugar = icon_no_sugar_svg;
-const iconCoffeBean = icon_coffee_bean_svg;
+const iconCoffeeBean = icon_coffee_bean_svg;
+const iconNoCoffeeBean = icon_no_coffee_bean_svg;
+const iconChocolate = icon_chocolate_svg;
+const iconFruit = icon_fruit_svg;
+const iconMilk = icon_milk_svg;
+const iconSparkling = icon_sparkling_svg;
+
+export const HC_ICON_MAP = new Map([
+  [icon_sugar_svg, icon_sugar_hc_svg],
+  [icon_no_sugar_svg, icon_no_sugar_hc_svg],
+  [icon_coffee_bean_svg, icon_coffee_bean_hc_svg],
+  [icon_no_coffee_bean_svg, icon_no_coffee_bean_hc_svg],
+  [icon_chocolate_svg, icon_chocolate_hc_svg],
+  [icon_fruit_svg, icon_fruit_hc_svg],
+  [icon_milk_svg, icon_milk_hc_svg],
+  [icon_sparkling_svg, icon_sparkling_hc_svg],
+]);
 
 export const MENU_ITEMS = [
   {
@@ -20,8 +52,8 @@ export const MENU_ITEMS = [
     categories: ["추천 메뉴", "커피"],
     quote: "\"깔끔하고 달지 않아요\"",
     infoItems: [
-      { text: "설탕이 안들어가요", icon: iconNoSugar },
-      { text: "기본 원두커피 + 물이에요", icon: iconCoffeBean },
+      { text: "설탕이 들어가지 않아요", icon: iconNoSugar },
+      { text: "일반 원두커피보다 양이 많아요", icon: iconCoffeeBean },
     ],
   },
   {
@@ -31,10 +63,10 @@ export const MENU_ITEMS = [
     img: menu_coffee_png,
     imgStyle: { width: "259.91%", height: "113.46%", left: "-80.17%", top: "-12.05%" },
     categories: ["추천 메뉴", "커피"],
-    quote: "\"진하고 고소해요\"",
+    quote: "\"깔끔하고 달지 않아요\"",
     infoItems: [
-      { text: "설탕이 안들어가요", icon: iconNoSugar },
-      { text: "기본 원두커피 + 물이에요", icon: iconCoffeBean },
+      { text: "설탕이 들어가지 않아요", icon: iconNoSugar },
+      { text: "카페인이 들어있어요", icon: iconCoffeeBean },
     ],
   },
   {
@@ -46,8 +78,8 @@ export const MENU_ITEMS = [
     categories: ["추천 메뉴", "커피"],
     quote: "\"카페인 걱정 없이 마셔요\"",
     infoItems: [
-      { text: "카페인이 없어요", icon: iconNoSugar },
-      { text: "커피우유 맛이에요", icon: iconCoffeBean },
+      { text: "카페인이 없어요", icon: iconNoCoffeeBean },
+      { text: "우유가 들어있어요", icon: iconMilk },
     ],
   },
   {
@@ -60,8 +92,8 @@ export const MENU_ITEMS = [
     categories: ["추천 메뉴", "커피"],
     quote: "\"달콤하고 고소해요\"",
     infoItems: [
-      { text: "바닐라 향이 나요", icon: iconCoffeBean },
-      { text: "아몬드가 들어가요", icon: iconCoffeBean },
+      { text: "설탕이 들어있어요", icon: iconSugar },
+      { text: "우유가 들어있어요", icon: iconMilk },
     ],
   },
   {
@@ -73,8 +105,8 @@ export const MENU_ITEMS = [
     categories: ["추천 메뉴", "에이드&스무디"],
     quote: "\"시원하고 달콤해요\"",
     infoItems: [
-      { text: "수박 과육이 들어가요", icon: iconCoffeBean },
-      { text: "코코넛 향이 나요", icon: iconCoffeBean },
+      { text: "과일이 들어있어요", icon: iconFruit },
+      { text: "설탕이 들어있어요", icon: iconSugar },
     ],
   },
   {
@@ -86,8 +118,8 @@ export const MENU_ITEMS = [
     categories: ["추천 메뉴", "에이드&스무디"],
     quote: "\"상큼하고 시원해요\"",
     infoItems: [
-      { text: "자몽 과즙이 들어가요", icon: iconCoffeBean },
-      { text: "탄산이 들어있어요", icon: iconNoSugar },
+      { text: "과일이 들어있어요", icon: iconFruit },
+      { text: "탄산이 들어있어요", icon: iconSparkling },
     ],
   },
   {
@@ -96,42 +128,16 @@ export const MENU_ITEMS = [
     price: 3900,
     img: menu_choco_honey_png,
     imgStyle: { width: "256.6%", height: "104.87%", left: "-77.87%", top: "-3.48%" },
-    categories: ["추천 메뉴", "에이드&스무디", "차"],
+    categories: ["추천 메뉴", "에이드&스무디"],
     quote: "\"달콤한 초코 음료예요\"",
     infoItems: [
-      { text: "꿀이 들어가요", icon: iconCoffeBean },
-      { text: "초코 퐁당이 올라가요", icon: iconCoffeBean },
-    ],
-  },
-  {
-    id: "regular-coffee-hot",
-    name: "일반 원두커피",
-    price: 4500,
-    img: menu_coffee_png,
-    imgStyle: { width: "259.91%", height: "113.46%", left: "-80.17%", top: "-12.05%" },
-    categories: ["차"],
-    quote: "\"진하고 고소해요\"",
-    infoItems: [
-      { text: "설탕이 안들어가요", icon: iconNoSugar },
-      { text: "기본 원두커피 + 물이에요", icon: iconCoffeBean },
-    ],
-  },
-  {
-    id: "watermelon-tea",
-    name: "수박 코코넛 주스",
-    price: 4400,
-    img: menu_watermelon_juice_png,
-    imgStyle: { width: "255.51%", height: "103.31%", left: "-77.54%", top: "-1.6%" },
-    categories: ["차"],
-    quote: "\"시원하고 달콤해요\"",
-    infoItems: [
-      { text: "수박 과육이 들어가요", icon: iconCoffeBean },
-      { text: "코코넛 향이 나요", icon: iconCoffeBean },
+      { text: "초콜렛이 들어있어요", icon: iconChocolate },
+      { text: "설탕이 들어있어요", icon: iconSugar },
     ],
   },
 ];
 
-export const CATEGORIES = ["추천 메뉴", "커피", "에이드&스무디", "차"];
+export const CATEGORIES = ["추천 메뉴", "커피", "에이드&스무디"];
 
 export function getItemsByCategory(category) {
   return MENU_ITEMS.filter((item) => item.categories.includes(category));

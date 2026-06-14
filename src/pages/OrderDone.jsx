@@ -1,17 +1,25 @@
 import { useNavigate } from "react-router-dom";
+import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./OrderDone.module.scss";
 import { useCart } from "../context/CartContext";
 import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
-import icon_hand_png from "../assets/icon-hand.png";
+import icon_clock_svg from "../assets/icon-clock.svg";
+import icon_home_svg from "../assets/icon-home.svg";
+import icon_home_hc_svg from "../assets/icon-home-hc.svg";
+import { useSettings } from "../context/SettingsContext";
 
-const imgLogo    = logo_png;
-const imgMascot  = mascot_png;
-const imgHand    = icon_hand_png;
+const imgLogo = logo_png;
+const imgMascot = mascot_png;
+const iconClock = icon_clock_svg;
+const iconHome = icon_home_svg;
+const iconHomeHc = icon_home_hc_svg;
 
 function OrderDone() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { dispatch } = useCart();
+  const { highContrast } = useSettings();
 
   const handleHome = () => {
     dispatch({ type: "CLEAR" });
@@ -23,12 +31,9 @@ function OrderDone() {
       {/* 헤더 */}
       <div className={styles.header}>
         <div className={styles.logoWrap}>
-          <img src={imgLogo} alt="MEGA COFFEE" style={{
-            position: "absolute", width: "301.44%", height: "1206.03%",
-            left: "-101.03%", top: "-691.09%", maxWidth: "none",
-          }} />
+          <img src={imgLogo} alt="MEGA COFFEE" />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 타이틀 */}
@@ -39,23 +44,33 @@ function OrderDone() {
 
       {/* 마스코트 */}
       <div className={styles.mascotWrap}>
-        <img src={imgMascot} alt="" style={{
-          position: "absolute",
-          width: "466.47%", height: "270.53%",
-          left: "-320.22%", top: "-142.66%",
-          maxWidth: "none", pointerEvents: "none",
-        }} />
+        <img
+          src={imgMascot}
+          alt=""
+          style={{
+            position: "absolute",
+            width: "466.47%",
+            height: "270.53%",
+            left: "-320.22%",
+            top: "-142.66%",
+            maxWidth: "none",
+            pointerEvents: "none",
+          }}
+        />
       </div>
 
       {/* 예상 대기시간 카드 */}
       <div className={styles.waitCard}>
-        <div className={styles.handIcon}>
-          <img src={imgHand} alt="" style={{
-            position: "absolute",
-            width: "263.79%", height: "191.25%",
-            left: "-81.47%", top: "-45.94%",
-            maxWidth: "none", pointerEvents: "none",
-          }} />
+        <div className={styles.clockIcon}>
+          <img
+            src={iconClock}
+            alt=""
+            style={{
+              width: "146px",
+              height: "129px",
+              objectFit: "contain",
+            }}
+          />
         </div>
         <div className={styles.waitText}>
           <p className={styles.waitLabel}>예상 대기시간</p>
@@ -65,13 +80,16 @@ function OrderDone() {
 
       {/* 처음 화면으로 돌아가기 버튼 */}
       <button className={styles.backBtn} onClick={handleHome}>
-        <div className={styles.handIcon}>
-          <img src={imgHand} alt="" style={{
-            position: "absolute",
-            width: "263.79%", height: "191.25%",
-            left: "-81.47%", top: "-45.94%",
-            maxWidth: "none", pointerEvents: "none",
-          }} />
+        <div className={styles.homeIcon}>
+          <img
+            src={highContrast ? iconHomeHc : iconHome}
+            alt=""
+            style={{
+              width: "77px",
+              height: "75px",
+              objectFit: "contain",
+            }}
+          />
         </div>
         <span className={styles.backLabel}>처음 화면으로 돌아가기</span>
       </button>

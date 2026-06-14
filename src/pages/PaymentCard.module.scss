@@ -3,6 +3,10 @@
   height: 1920px;
   position: relative;
   background: #fafafa;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+  }
 }
 
 // ── 상단 헤더 ─────────────────────────────────────────────
@@ -17,10 +21,19 @@
 }
 
 .logoWrap {
-  position: relative;
-  width: 280px;
-  height: 39px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 51px;
+
+  img {
+    height: 100%;
+    width: auto;
+    display: block;
+
+    [data-contrast="high"] & {
+      filter: brightness(0) invert(1);
+    }
+  }
 }
 
 .time {
@@ -29,6 +42,10 @@
   font-size: 50px;
   color: #000;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── 타이틀 ────────────────────────────────────────────────
@@ -47,6 +64,10 @@
   line-height: 105px;
   margin: 0;
   white-space: pre-line;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .titleBold {
@@ -104,6 +125,10 @@
   color: #30190b;
   line-height: normal;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #141414;
+  }
 }
 
 .cardSub {
@@ -113,6 +138,10 @@
   color: #907a22;
   line-height: normal;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #262624;
+  }
 }
 
 // ── 사이드 버튼 (오른쪽 2개) ──────────────────────────────
@@ -128,6 +157,12 @@
   box-shadow:
     0px 8px 4px rgba(207, 205, 197, 0.23),
     inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+    border: 5px solid #fed32c;
+    box-shadow: none;
+  }
 }
 
 .sideBtnInner {
@@ -162,6 +197,10 @@
   color: #30190b;
   line-height: normal;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 .sideSub {
@@ -171,12 +210,20 @@
   color: #b09012;
   line-height: normal;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #aea688;
+  }
 }
 
 .sideBtnDisabled {
   opacity: 0.45;
   cursor: default;
   pointer-events: none;
+
+  [data-contrast="high"] & {
+    opacity: 1;
+  }
 }
 
 // ── 뒤로 가기 ─────────────────────────────────────────────
@@ -197,4 +244,11 @@
   box-shadow:
     0px 8px 4px rgba(207, 205, 197, 0.23),
     inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+    border: 5px solid #fafafa;
+    color: #fafafa;
+    box-shadow: none;
+  }
 }

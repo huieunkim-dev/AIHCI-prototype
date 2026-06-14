@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
+import useKoreanTime from "../hooks/useKoreanTime";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./PaymentComplete.module.scss";
 import { useCart } from "../context/CartContext";
 import logo_png from "../assets/logo.png";
 import card_insert_png from "../assets/card-insert.png";
 
-const imgLogo  = logo_png;
-const imgCard  = card_insert_png;
+const imgLogo = logo_png;
+const imgCard = card_insert_png;
 
 const SECONDS = 5;
 
 function PaymentComplete() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const { total } = useCart();
@@ -31,12 +33,9 @@ function PaymentComplete() {
       {/* 헤더 */}
       <div className={styles.header}>
         <div className={styles.logoWrap}>
-          <img src={imgLogo} alt="MEGA COFFEE" style={{
-            position: "absolute", width: "301.44%", height: "1206.03%",
-            left: "-101.03%", top: "-691.09%", maxWidth: "none",
-          }} />
+          <img src={imgLogo} alt="MEGA COFFEE" />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 금액 */}
@@ -59,14 +58,20 @@ function PaymentComplete() {
 
       {/* 카드 이미지 */}
       <div className={styles.cardImgWrap}>
-        <img src={imgCard} alt="" style={{
-          position: "absolute",
-          width: "139.89%", height: "111.43%",
-          left: "-14.34%", top: "-1.85%",
-          maxWidth: "none", pointerEvents: "none",
-        }} />
+        <img
+          src={imgCard}
+          alt=""
+          style={{
+            position: "absolute",
+            width: "139.89%",
+            height: "111.43%",
+            left: "-14.34%",
+            top: "-1.85%",
+            maxWidth: "none",
+            pointerEvents: "none",
+          }}
+        />
       </div>
-
     </div>
   );
 }

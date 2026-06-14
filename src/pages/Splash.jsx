@@ -1,28 +1,38 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./Splash.module.scss";
 import logo_png from "../assets/logo.png";
 import mascot_png from "../assets/mascot.png";
+import icon_dine_in_svg from "../assets/icon-dine-in.svg";
+import icon_takeout_svg from "../assets/icon-takeout.svg";
+import icon_takeout_hc_svg from "../assets/icon-takeout-hc.svg";
+import icon_remote_svg from "../assets/icon-remote.svg";
+import icon_remote_hc_svg from "../assets/icon-remote-hc.svg";
+import RemoteGuideModal from "../components/RemoteGuideModal";
+import { useSettings } from "../context/SettingsContext";
 
-const spriteSheet =
-  logo_png;
-const mascotSheet =
-  mascot_png;
+const logo = logo_png;
+const mascotSheet = mascot_png;
+const iconDineIn = icon_dine_in_svg;
+const iconTakeout = icon_takeout_svg;
+const iconTakeoutHc = icon_takeout_hc_svg;
+const iconRemote = icon_remote_svg;
+const iconRemoteHc = icon_remote_hc_svg;
 
 function Splash() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
+  const [showRemoteGuide, setShowRemoteGuide] = useState(false);
+  const { highContrast } = useSettings();
 
   return (
     <div className={styles.page}>
       <div className={styles.topBar}>
         <div className={styles.logo}>
-          <div className={styles.logoIcon}>
-            <img src={spriteSheet} alt="" />
-          </div>
-          <div className={styles.logoText}>
-            <img src={spriteSheet} alt="MEGA COFFEE" />
-          </div>
+          <img src={logo} alt="MEGA COFFEE" />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       <h1 className={styles.title}>
@@ -42,6 +52,9 @@ function Splash() {
             navigate("/mode-select", { state: { orderType: "dine-in" } })
           }
         >
+          <div className={styles.buttonIconDineIn}>
+            <img src={iconDineIn} alt="" />
+          </div>
           먹고가요
         </button>
         <button
@@ -50,9 +63,29 @@ function Splash() {
             navigate("/mode-select", { state: { orderType: "takeout" } })
           }
         >
+          <div className={styles.buttonIconTakeout}>
+            <img src={highContrast ? iconTakeoutHc : iconTakeout} alt="" />
+          </div>
           포장해요
         </button>
       </div>
+
+      <button
+        className={styles.remoteButton}
+        onClick={() => setShowRemoteGuide(true)}
+      >
+        <div className={styles.remoteIcon}>
+          <img src={highContrast ? iconRemoteHc : iconRemote} alt="" />
+        </div>
+        <div className={styles.remoteText}>
+          <p className={styles.remoteTextMain}>리모컨 사용하기</p>
+          <p className={styles.remoteTextSub}>← 시작 버튼 눌러주세요</p>
+        </div>
+      </button>
+
+      {showRemoteGuide && (
+        <RemoteGuideModal onClose={() => setShowRemoteGuide(false)} />
+      )}
     </div>
   );
 }

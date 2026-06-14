@@ -1,6 +1,17 @@
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import styles from "./MenuTemperature.module.scss";
 import { getItemById } from "../../data/menuData";
+import AssistBar from "../../components/AssistBar";
+import { useSettings } from "../../context/SettingsContext";
+import icon_back_svg from "../../assets/icon-back.svg";
+import icon_back_hc_svg from "../../assets/icon-back-hc.svg";
+import icon_ice_svg from "../../assets/icon-ice.svg";
+import icon_hot_svg from "../../assets/icon-hot.svg";
+
+const iconBack = icon_back_svg;
+const iconBackHc = icon_back_hc_svg;
+const iconIce = icon_ice_svg;
+const iconHot = icon_hot_svg;
 
 function MenuTemperature() {
   const navigate = useNavigate();
@@ -8,6 +19,7 @@ function MenuTemperature() {
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const item = getItemById(id);
+  const { highContrast } = useSettings();
 
   function handleTemp(temp) {
     navigate(`/menu/${id}/quantity`, { state: { orderType, temp } });
@@ -32,7 +44,11 @@ function MenuTemperature() {
           {/* 음료 이미지 */}
           <div className={styles.imgContainer}>
             {item.imgDirect ? (
-              <img className={styles.imgDirect} src={item.img} alt={item.name} />
+              <img
+                className={styles.imgDirect}
+                src={item.img}
+                alt={item.name}
+              />
             ) : (
               <div className={styles.imgWrap}>
                 <img src={item.img} alt={item.name} style={item.imgStyle} />
@@ -46,6 +62,7 @@ function MenuTemperature() {
               className={`${styles.tempBtn} ${styles.iceBtn}`}
               onClick={() => handleTemp("ice")}
             >
+              <img src={iconIce} className={styles.tempIcon} alt="" />
               <span className={styles.tempLabel}>차갑게</span>
               <span className={styles.tempSub}>[아이스]</span>
             </button>
@@ -53,6 +70,7 @@ function MenuTemperature() {
               className={`${styles.tempBtn} ${styles.hotBtn}`}
               onClick={() => handleTemp("hot")}
             >
+              <img src={iconHot} className={styles.tempIcon} alt="" />
               <span className={styles.tempLabel}>따뜻하게</span>
               <span className={styles.tempSub}>[핫]</span>
             </button>
@@ -61,9 +79,19 @@ function MenuTemperature() {
       </div>
 
       {/* 뒤로 가기 */}
-      <button className={styles.backBtn} onClick={() => navigate(-1)}>
-        뒤로 가기
+      <button
+        className={styles.backBtn}
+        onClick={() => navigate("/menu", { state: { orderType } })}
+      >
+        <img
+          src={highContrast ? iconBackHc : iconBack}
+          className={styles.backIcon}
+          alt=""
+        />
+        <span>뒤로 가기</span>
       </button>
+
+      <AssistBar dark />
     </div>
   );
 }

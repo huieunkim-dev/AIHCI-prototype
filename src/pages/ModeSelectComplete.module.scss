@@ -4,6 +4,10 @@
   height: 1920px;
   background-color: #fafafa;
   overflow: hidden;
+
+  [data-contrast="high"] & {
+    background-color: #1a1810;
+  }
 }
 
 // ── Top bar ───────────────────────────────────────────────
@@ -18,19 +22,18 @@
 }
 
 .logoText {
-  position: relative;
-  width: 280px;
-  height: 39px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 51px;
 
   img {
-    position: absolute;
-    width: 301.44%;
-    height: 1206.03%;
-    left: -101.03%;
-    top: -691.09%;
-    max-width: none;
-    pointer-events: none;
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+
+  [data-contrast="high"] & img {
+    filter: brightness(0) invert(1);
   }
 }
 
@@ -40,6 +43,10 @@
   font-size: 50px;
   color: #000;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── 마스코트 ──────────────────────────────────────────────
@@ -60,6 +67,10 @@
     top: -140.52%;
     max-width: none;
     pointer-events: none;
+  }
+
+  [data-contrast="high"] & img {
+    filter: grayscale(1) brightness(0.9);
   }
 }
 
@@ -82,6 +93,10 @@
   font-size: 40px;
   color: #955002;
   text-align: center;
+
+  [data-contrast="high"] & {
+    color: #aea688;
+  }
 }
 
 .mainTitle {
@@ -90,6 +105,10 @@
   font-size: 128px;
   color: #30190b;
   text-align: center;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .checkItem {
@@ -109,6 +128,10 @@
     color: #6f4719;
     text-align: center;
     width: 345px;
+
+    [data-contrast="high"] & {
+      color: #fafafa;
+    }
   }
 }
 
@@ -134,20 +157,14 @@
 }
 
 .menuButtonIcon {
-  position: relative;
-  width: 84px;
-  height: 116px;
+  width: 108px;
+  height: 52px;
   flex-shrink: 0;
-  overflow: hidden;
 
   img {
-    position: absolute;
-    width: 263.79%;
-    height: 191.25%;
-    left: -81.47%;
-    top: -45.94%;
-    max-width: none;
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 }
 

@@ -3,6 +3,10 @@
   height: 1920px;
   position: relative;
   background: #4d4c45;
+
+  [data-contrast="high"] & {
+    background: #303030;
+  }
 }
 
 .overlay {
@@ -23,11 +27,15 @@
   border-radius: 24px;
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 40px;
   align-items: center;
   padding: 75px 24px;
   z-index: 1;
   overflow: hidden;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+  }
 }
 
 // ── 제목 + 구분선 ─────────────────────────────────────────
@@ -50,6 +58,10 @@
   line-height: normal;
   width: 100%;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .dividerWrap {
@@ -58,6 +70,10 @@
   background: rgba(170, 147, 57, 0.3);
   border-radius: 1px;
   flex-shrink: 0;
+
+  [data-contrast="high"] & {
+    background: rgba(210, 202, 172, 0.3);
+  }
 }
 
 // ── 아이템 목록 ───────────────────────────────────────────
@@ -67,7 +83,10 @@
   gap: 70px;
   align-items: center;
   width: 890px;
-  flex-shrink: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-top: 40px;
 }
 
 .emptyText {
@@ -82,7 +101,7 @@
 .itemRow {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 31px;
   width: 100%;
   flex-shrink: 0;
@@ -129,6 +148,10 @@
   flex-shrink: 0;
   overflow: visible;
   position: relative;
+
+  [data-contrast="high"] & {
+    background: #d6d6d6;
+  }
 }
 
 .thumbImgWrap {
@@ -169,6 +192,10 @@
   color: #241613;
   letter-spacing: -1px;
   line-height: 60px;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 .itemPrice {
@@ -178,6 +205,10 @@
   color: #ddb000;
   letter-spacing: -1.5px;
   line-height: 60px;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .won {
@@ -187,52 +218,28 @@
 .itemDetail {
   font-family: 'Pretendard', sans-serif;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 32px;
   color: #79745e;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.8px;
   line-height: 40px;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  text-align: left;
+  text-align: right;
+  flex-shrink: 0;
+
+  [data-contrast="high"] & {
+    color: #d2caac;
+  }
 }
 
 .arrow {
   color: #ddb000;
-}
 
-// 수량 조절
-.qtyControl {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  flex-shrink: 0;
-}
-
-.qtyBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.qtyIcon {
-  width: 50px;
-  height: 50px;
-  display: block;
-}
-
-.qtyNum {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 600;
-  font-size: 64px;
-  color: #241613;
-  letter-spacing: -1.6px;
-  line-height: 60px;
-  min-width: 48px;
-  text-align: center;
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 // ── 요약 + 버튼 영역 ──────────────────────────────────────
@@ -259,6 +266,10 @@
   font-size: 50px;
   color: #241613;
   letter-spacing: -1.25px;
+
+  [data-contrast="high"] & {
+    color: #d2caac;
+  }
 }
 
 .amountValue {
@@ -267,6 +278,10 @@
   font-size: 50px;
   color: #241613;
   letter-spacing: -1.25px;
+
+  [data-contrast="high"] & {
+    color: #d2caac;
+  }
 }
 
 .totalSection {
@@ -292,6 +307,10 @@
   font-size: 64px;
   color: #241613;
   letter-spacing: -1.6px;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 .totalValue {
@@ -300,6 +319,10 @@
   font-size: 64px;
   color: #241613;
   letter-spacing: -1.6px;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 .actionButtons {
@@ -324,6 +347,12 @@
   box-shadow:
     0px 8px 4px rgba(207, 205, 197, 0.23),
     inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+    border: 4px solid #fed32c;
+    color: #fed32c;
+  }
 }
 
 .orderBtn {
@@ -340,6 +369,10 @@
   box-shadow:
     0px 8px 4px rgba(207, 205, 197, 0.23),
     inset -2px -5px 8px rgba(83, 72, 26, 0.25);
+
+  [data-contrast="high"] & {
+    color: #141414;
+  }
 }
 
 // ── 뒤로 가기 ─────────────────────────────────────────────
@@ -359,4 +392,9 @@
   cursor: pointer;
   box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.25);
   z-index: 1;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+    color: #fed32c;
+  }
 }

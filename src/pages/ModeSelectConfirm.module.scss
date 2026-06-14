@@ -4,6 +4,10 @@
   height: 1920px;
   background-color: #4d4c45;
   overflow: hidden;
+
+  [data-contrast="high"] & {
+    background-color: #303030;
+  }
 }
 
 // ── Top bar ───────────────────────────────────────────────
@@ -18,19 +22,18 @@
 }
 
 .logoText {
-  position: relative;
-  width: 280px;
-  height: 39px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 51px;
 
   img {
-    position: absolute;
-    width: 301.44%;
-    height: 1206.03%;
-    left: -101.03%;
-    top: -691.09%;
-    max-width: none;
-    pointer-events: none;
+    height: 100%;
+    width: auto;
+    display: block;
+
+    [data-contrast="high"] & {
+      filter: brightness(0) invert(1) brightness(0.553);
+    }
   }
 }
 
@@ -40,6 +43,10 @@
   font-size: 50px;
   color: #000;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #8d8d8d;
+  }
 }
 
 // ── 중앙 컨테이너 ─────────────────────────────────────────
@@ -65,6 +72,10 @@
   flex-direction: column;
   gap: 54px;
   align-items: flex-start;
+
+  [data-contrast="high"] & {
+    background-color: #1a1810;
+  }
 }
 
 // ── 이전으로 버튼 ─────────────────────────────────────────
@@ -92,6 +103,20 @@
     font-size: 70px;
     color: #30190b;
   }
+
+  [data-contrast="high"] & {
+    background-color: transparent;
+    border: 4px solid #fafafa;
+    box-shadow: none;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+
+    span {
+      color: #fafafa;
+    }
+  }
 }
 
 // ── 옵션 카드 ─────────────────────────────────────────────
@@ -106,10 +131,39 @@
   transition: background-color 0.15s;
   border: none;
   background-color: #dfdbcd;
+
+  [data-contrast="high"] &:not(.optionCardSelected) {
+    background-color: transparent;
+    border: 5px solid #9d9d9d;
+
+    .turtleIcon img,
+    .koreanIcon img {
+      filter: brightness(0) invert(1);
+    }
+  }
 }
 
 .optionCardSelected {
   background-color: #fed32c;
+
+  .turtleIcon img,
+  .koreanIcon img {
+    filter: brightness(0);
+  }
+
+  [data-contrast="high"] & {
+    .optionLabel {
+      color: #494842;
+    }
+
+    .optionName {
+      color: #141414;
+    }
+
+    .optionDesc {
+      color: #262624;
+    }
+  }
 }
 
 .optionInner {
@@ -135,6 +189,10 @@
   color: #7d6e6b;
   text-align: right;
   width: 349px;
+
+  [data-contrast="high"] & {
+    color: #cbcbcb;
+  }
 }
 
 .optionTitleRow {
@@ -156,14 +214,15 @@
   }
 }
 
-.koreanPrefix {
-  font-family: 'Ria Sans', serif;
-  font-weight: 700;
-  font-size: 48px;
-  color: #b09012;
-  letter-spacing: -2.4px;
-  white-space: nowrap;
+.koreanIcon {
+  height: 52px;
   flex-shrink: 0;
+
+  img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
 }
 
 .optionName {
@@ -172,6 +231,10 @@
   font-size: 90px;
   color: #241613;
   width: 410px;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 .optionDesc {
@@ -179,6 +242,10 @@
   font-weight: 500;
   font-size: 50px;
   color: #835348;
+
+  [data-contrast="high"] & {
+    color: #aea688;
+  }
 }
 
 // ── 확인 질문 행 ──────────────────────────────────────────
@@ -197,6 +264,10 @@
   color: #705c0d;
   text-align: center;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .checkButton {
@@ -216,10 +287,22 @@
     width: 51px;
     height: 35px;
   }
+
+  [data-contrast="high"] &:not(.checkButtonActive) {
+    background-color: #fafafa;
+
+    img {
+      filter: brightness(0);
+    }
+  }
 }
 
 .checkButtonActive {
   background-color: #fed32c;
+
+  [data-contrast="high"] & img {
+    filter: brightness(0);
+  }
 }
 
 // ── 확인 버튼 ─────────────────────────────────────────────

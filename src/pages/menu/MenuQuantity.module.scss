@@ -3,6 +3,10 @@
   height: 1920px;
   position: relative;
   background: #4d4c45;
+
+  [data-contrast="high"] & {
+    background: #303030;
+  }
 }
 
 .overlay {
@@ -28,6 +32,10 @@
   gap: 83px;
   z-index: 1;
   overflow: hidden;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+  }
 }
 
 // ── 제목 + 수량 선택 섹션 ─────────────────────────────────
@@ -48,6 +56,10 @@
   letter-spacing: -2px;
   line-height: normal;
   width: 100%;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 .titleLight {
@@ -68,6 +80,11 @@
   border-radius: 24px;
   padding: 0 33px;
   flex-shrink: 0;
+
+  [data-contrast="high"] & {
+    background: #fafafa;
+    border-color: #fafafa;
+  }
 }
 
 .qtyBtn {
@@ -129,14 +146,19 @@
   border-left: 2px solid rgba(170, 147, 57, 0.37);
   border-right: 2px solid rgba(170, 147, 57, 0.37);
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   gap: 8px;
   flex-shrink: 0;
 
+  [data-contrast="high"] & {
+    border-left-color: #35332b;
+    border-right-color: #35332b;
+  }
+
   // 숫자와 "잔" 텍스트 baseline 맞춤
   .qtyNum, .qtyUnit {
-    line-height: 1;
+    line-height: 1.5;
   }
 }
 
@@ -158,55 +180,56 @@
   line-height: normal;
 }
 
-// ── 확인 버튼 (체크 + 텍스트) ─────────────────────────────
-.confirmRow {
-  display: flex;
-  align-items: center;
-  gap: 43px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  flex-shrink: 0;
-  padding: 0;
-}
-
-.checkCircle {
-  width: 97px;
-  height: 97px;
-  background: #c4bdbc;
-  border-radius: 50%;
+// ── 이전으로 버튼 ─────────────────────────────────────────
+.prevBtn {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 32px;
+  width: 340px;
+  height: 109px;
+  background: #faf4dd;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
   flex-shrink: 0;
-}
-
-.checkIcon {
-  font-size: 52px;
-  line-height: 1;
-  color: #fff;
-  font-weight: 700;
-}
-
-.confirmText {
   font-family: 'Pretendard', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 50px;
-  color: #705c0d;
-  line-height: normal;
-  white-space: nowrap;
+  color: #5a4a10;
+  box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.11);
+
+  [data-contrast="high"] & {
+    background: transparent;
+    border: 5px solid #fafafa;
+    color: #fafafa;
+  }
 }
 
-// ── 뒤로 가기 버튼 ────────────────────────────────────────
-.backBtn {
+.prevIcon {
+  width: 33px;
+  height: 64px;
+  flex-shrink: 0;
+
+  [data-contrast="high"] & {
+    filter: brightness(0) invert(1);
+  }
+}
+
+// ── 다음으로 버튼 ─────────────────────────────────────────
+.nextBtn {
   position: absolute;
   left: 70px;
   top: 1534px;
   width: 940px;
   height: 157px;
-  background: #fafafa;
+  background: #fed32c;
   border: none;
   border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 64px;
@@ -214,4 +237,16 @@
   cursor: pointer;
   box-shadow: inset -2px -5px 8px rgba(83, 72, 26, 0.25);
   z-index: 1;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+    color: #fed32c;
+  }
+}
+
+.nextIcon {
+  width: 33px;
+  height: 64px;
+  flex-shrink: 0;
+  transform: rotate(180deg);
 }

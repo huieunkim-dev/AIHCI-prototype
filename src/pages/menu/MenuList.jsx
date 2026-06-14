@@ -1,16 +1,21 @@
 import { useState, useRef, useEffect } from "react";
+import useKoreanTime from "../../hooks/useKoreanTime";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./MenuList.module.scss";
 import { CATEGORIES, getItemsByCategory } from "../../data/menuData";
 import { useCart } from "../../context/CartContext";
 import icon_back_svg from "../../assets/icon-back.svg";
 import scroll_arrow_down_svg from "../../assets/scroll-arrow-down.svg";
+import icon_cart_svg from "../../assets/icon-cart.svg";
+import AssistBar from "../../components/AssistBar";
 
 const iconBack = icon_back_svg;
 const iconArrow = scroll_arrow_down_svg;
+const iconCart = icon_cart_svg;
 
 function MenuList() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const [activeCategory, setActiveCategory] = useState("추천 메뉴");
@@ -40,7 +45,7 @@ function MenuList() {
     return () => cancelAnimationFrame(rafId);
   }, [activeCategory]);
 
-  const { items, total } = useCart();
+  const { total } = useCart();
 
   const visibleItems = getItemsByCategory(activeCategory);
 
@@ -52,8 +57,6 @@ function MenuList() {
     setActiveCategory(cat);
   }
 
-  const totalQty = items.reduce((s, i) => s + i.qty, 0);
-
   return (
     <div className={styles.page}>
       {/* 헤더 */}
@@ -63,7 +66,7 @@ function MenuList() {
             <img src={iconBack} alt="" />
             <span>이전으로</span>
           </button>
-          <span className={styles.time}>16:44</span>
+          <span className={styles.time}>{time}</span>
         </div>
 
         <div className={styles.tabs}>
@@ -73,7 +76,14 @@ function MenuList() {
               className={`${styles.tab} ${activeCategory === cat ? styles.tabActive : ""}`}
               onClick={() => handleCategoryChange(cat)}
             >
-              {cat}
+              {cat === "에이드&스무디" ? (
+                <span className={styles.tabMultiline}>
+                  <span>에이드</span>
+                  <span>&스무디</span>
+                </span>
+              ) : (
+                cat
+              )}
             </button>
           ))}
         </div>
@@ -154,21 +164,17 @@ function MenuList() {
             <span className={styles.orderTotal}>
               {total.toLocaleString()}
               <span className={styles.unit}>원</span>
-              {totalQty > 0 && ` (${totalQty}개)`}
             </span>
           </div>
           <button
             className={styles.cartButton}
             onClick={() => navigate("/cart", { state: { orderType } })}
           >
+            <img src={iconCart} className={styles.cartIcon} alt="" />
             담은 상품 보기
           </button>
         </div>
-        <div className={styles.bottomActions}>
-          <button className={styles.actionBtn}>직원 부르기</button>
-          <button className={styles.actionBtn}>크게 보기</button>
-          <button className={styles.actionBtn}>고대비</button>
-        </div>
+        <AssistBar inline />
       </div>
     </div>
   );

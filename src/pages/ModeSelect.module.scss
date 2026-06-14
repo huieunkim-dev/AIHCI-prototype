@@ -4,6 +4,10 @@
   height: 1920px;
   background-color: #fafafa;
   overflow: hidden;
+
+  [data-contrast="high"] & {
+    background-color: #1a1810;
+  }
 }
 
 // ── Top bar ───────────────────────────────────────────────
@@ -20,43 +24,16 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 13px;
-  height: 78px;
-}
-
-.logoIcon {
-  position: relative;
-  width: 50px;
-  height: 78.571px;
-  flex-shrink: 0;
-  overflow: hidden;
+  height: 51px;
 
   img {
-    position: absolute;
-    width: 1205.75%;
-    height: 427.59%;
-    left: -552.69%;
-    top: -135.02%;
-    max-width: none;
-    pointer-events: none;
+    height: 100%;
+    width: auto;
+    display: block;
   }
-}
 
-.logoText {
-  position: relative;
-  width: 184px;
-  height: 26px;
-  flex-shrink: 0;
-  overflow: hidden;
-
-  img {
-    position: absolute;
-    width: 301.44%;
-    height: 1206.03%;
-    left: -101.03%;
-    top: -691.09%;
-    max-width: none;
-    pointer-events: none;
+  [data-contrast="high"] & img {
+    filter: brightness(0) invert(1) brightness(0.4863);
   }
 }
 
@@ -66,6 +43,10 @@
   font-size: 48px;
   color: #241613;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── 홈으로 버튼 ───────────────────────────────────────────
@@ -98,6 +79,20 @@
     font-size: 70px;
     color: #30190b;
   }
+
+  [data-contrast="high"] & {
+    background-color: transparent;
+    border: 4px solid #fafafa;
+    box-shadow: none;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+
+    span {
+      color: #fafafa;
+    }
+  }
 }
 
 // ── 제목 ─────────────────────────────────────────────────
@@ -114,6 +109,10 @@
   .bold {
     font-weight: 800;
     font-size: 100px;
+  }
+
+  [data-contrast="high"] & {
+    color: #fed32c;
   }
 }
 
@@ -161,44 +160,34 @@
   .modeDesc {
     color: #86634d;
   }
+
+  [data-contrast="high"] & {
+    background-color: transparent;
+    border: 5px solid #fed32c;
+    box-shadow: none;
+
+    .modeName {
+      color: #fed32c;
+    }
+
+    .modeDesc {
+      color: #aea688;
+    }
+  }
 }
 
 .modeButtonEasy {
   top: 1400px;
   background-color: #fed32c;
-}
 
-// ── 하단 보조 버튼 ────────────────────────────────────────
-.bottomBar {
-  position: absolute;
-  top: 1707px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 937px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  [data-contrast="high"] & {
+    .modeName {
+      color: #141414;
+    }
 
-.assistButton {
-  background-color: #e8e8e8;
-  border: none;
-  border-radius: 10px;
-  padding: 24px 40px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  cursor: pointer;
-
-  img {
-    flex-shrink: 0;
-  }
-
-  span {
-    font-family: 'Pretendard', sans-serif;
-    font-weight: 600;
-    font-size: 40px;
-    color: #241613;
-    white-space: nowrap;
+    .modeDesc {
+      color: #262624;
+    }
   }
 }
+

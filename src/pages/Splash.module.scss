@@ -4,6 +4,10 @@
   height: 1920px;
   background-color: #fafafa;
   overflow: hidden;
+
+  [data-contrast="high"] & {
+    background-color: #1a1810;
+  }
 }
 
 // ── Top bar ──────────────────────────────────────────────
@@ -20,45 +24,16 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 13px;
-  height: 78px;
-}
-
-// Sprite-sheet clipping for logo icon (50 × 78.571px viewport)
-.logoIcon {
-  position: relative;
-  width: 50px;
-  height: 78.571px;
-  flex-shrink: 0;
-  overflow: hidden;
+  height: 51px;
 
   img {
-    position: absolute;
-    width: 1205.75%;
-    height: 427.59%;
-    left: -552.69%;
-    top: -135.02%;
-    max-width: none;
-    pointer-events: none;
+    height: 100%;
+    width: auto;
+    display: block;
   }
-}
 
-// Sprite-sheet clipping for logo text (184 × 26px viewport)
-.logoText {
-  position: relative;
-  width: 184px;
-  height: 26px;
-  flex-shrink: 0;
-  overflow: hidden;
-
-  img {
-    position: absolute;
-    width: 301.44%;
-    height: 1206.03%;
-    left: -101.03%;
-    top: -691.09%;
-    max-width: none;
-    pointer-events: none;
+  [data-contrast="high"] & img {
+    filter: brightness(0) invert(1);
   }
 }
 
@@ -68,6 +43,10 @@
   font-size: 48px;
   color: #241613;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── Title ─────────────────────────────────────────────────
@@ -80,12 +59,16 @@
   font-size: 128px;
   color: #30190b;
   line-height: 1.2;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 // ── Mascot (sprite-sheet, 598 × 624px viewport) ───────────
 .mascot {
   position: absolute;
-  top: 737px;
+  top: 789px;
   left: calc(50% + 168px);
   transform: translateX(-50%);
   width: 598px;
@@ -101,12 +84,16 @@
     max-width: none;
     pointer-events: none;
   }
+
+  [data-contrast="high"] & img {
+    filter: grayscale(1) brightness(1.0);
+  }
 }
 
 // ── Buttons ───────────────────────────────────────────────
 .buttons {
   position: absolute;
-  bottom: 148px;
+  top: 1413px;
   left: 52px;
   width: 976px;
   display: flex;
@@ -116,6 +103,10 @@
 .button {
   flex: 1;
   height: 229px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
   background-color: #fed32c;
   border: none;
   border-radius: 24px;
@@ -130,5 +121,106 @@
 
   &:active {
     filter: brightness(0.95);
+  }
+
+  [data-contrast="high"] & {
+    color: #141414;
+  }
+
+  [data-contrast="high"] &:has(.buttonIconTakeout) {
+    background-color: transparent;
+    border: 5px solid #fed32c;
+    color: #fed32c;
+    box-shadow: none;
+  }
+}
+
+.buttonIconDineIn {
+  width: 72.194px;
+  height: 35px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.buttonIconTakeout {
+  width: 51px;
+  height: 59px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+// ── 리모컨 사용하기 버튼 ────────────────────────────────────
+.remoteButton {
+  position: absolute;
+  top: 1707px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  background-color: #e8e8e8;
+  border: none;
+  border-radius: 10px;
+  padding: 24px 40px;
+  cursor: pointer;
+
+  &:active {
+    filter: brightness(0.97);
+  }
+
+  [data-contrast="high"] & {
+    background-color: #35332b;
+    border: 1px solid #d2caac;
+  }
+}
+
+.remoteIcon {
+  width: 63px;
+  height: 63px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.remoteText {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  white-space: nowrap;
+  color: #241613;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.remoteTextMain {
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0;
+
+  [data-contrast="high"] & {
+    color: #c5c3ba;
+  }
+}
+
+.remoteTextSub {
+  font-weight: 600;
+  font-size: 40px;
+  margin: 0;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
   }
 }

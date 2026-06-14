@@ -1,34 +1,26 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import useKoreanTime from "../hooks/useKoreanTime";
 import styles from "./ModeSelect.module.scss";
 import logo_png from "../assets/logo.png";
 import icon_back_svg from "../assets/icon-back.svg";
-import icon_mic_svg from "../assets/icon-mic.svg";
-import icon_person_svg from "../assets/icon-person.svg";
+import AssistBar from "../components/AssistBar";
 
-const spriteSheet =
-  logo_png;
-const iconBack =
-  icon_back_svg;
-const iconMic =
-  icon_mic_svg;
-const iconPerson =
-  icon_person_svg;
+const spriteSheet = logo_png;
+const iconBack = icon_back_svg;
 
 function ModeSelect() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
+  const { state } = useLocation();
+  const orderType = state?.orderType ?? "dine-in";
 
   return (
     <div className={styles.page}>
       <div className={styles.topBar}>
         <div className={styles.logo}>
-          <div className={styles.logoIcon}>
-            <img src={spriteSheet} alt="" />
-          </div>
-          <div className={styles.logoText}>
-            <img src={spriteSheet} alt="MEGA COFFEE" />
-          </div>
+          <img src={spriteSheet} alt="MEGA COFFEE" />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       <button className={styles.homeButton} onClick={() => navigate("/")}>
@@ -51,7 +43,7 @@ function ModeSelect() {
 
       <button
         className={`${styles.modeButton} ${styles.modeButtonEasy}`}
-        onClick={() => navigate("/mode-select/confirm")}
+        onClick={() => navigate("/mode-select/confirm", { state: { orderType } })}
       >
         <span className={styles.modeName}>쉬운 버전</span>
         <span className={styles.modeDesc}>
@@ -59,16 +51,7 @@ function ModeSelect() {
         </span>
       </button>
 
-      <div className={styles.bottomBar}>
-        <button className={styles.assistButton}>
-          <img src={iconMic} width={39} height={54} alt="" />
-          <span>음성안내 시작</span>
-        </button>
-        <button className={styles.assistButton}>
-          <img src={iconPerson} width={51} height={51} alt="" />
-          <span>직원 호출하기</span>
-        </button>
-      </div>
+      <AssistBar />
     </div>
   );
 }

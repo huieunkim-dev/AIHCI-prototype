@@ -1,6 +1,8 @@
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import styles from "./MenuDetail.module.scss";
-import { getItemById } from "../../data/menuData";
+import { getItemById, HC_ICON_MAP } from "../../data/menuData";
+import AssistBar from "../../components/AssistBar";
+import { useSettings } from "../../context/SettingsContext";
 
 function MenuDetail() {
   const navigate = useNavigate();
@@ -9,6 +11,7 @@ function MenuDetail() {
   const orderType = state?.orderType ?? "dine-in";
   const fromCart = state?.from === "cart";
   const item = getItemById(id);
+  const { highContrast } = useSettings();
 
   if (!item) return null;
 
@@ -42,7 +45,15 @@ function MenuDetail() {
               <ul className={styles.infoTextList}>
                 <li className={styles.infoText}>{info.text}</li>
               </ul>
-              <img src={info.icon} alt="" className={styles.infoIcon} />
+              <img
+                src={
+                  highContrast
+                    ? (HC_ICON_MAP.get(info.icon) ?? info.icon)
+                    : info.icon
+                }
+                alt=""
+                className={styles.infoIcon}
+              />
             </div>
           ))}
         </div>
@@ -51,10 +62,16 @@ function MenuDetail() {
       {/* 이해했어요! 버튼 */}
       <button
         className={styles.okBtn}
-        onClick={() => fromCart ? navigate(-1) : navigate(`/menu/${id}/temperature`, { state: { orderType } })}
+        onClick={() =>
+          fromCart
+            ? navigate(-1)
+            : navigate(`/menu/${id}/temperature`, { state: { orderType } })
+        }
       >
         이해했어요!
       </button>
+
+      <AssistBar dark />
     </div>
   );
 }

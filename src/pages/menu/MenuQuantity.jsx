@@ -3,7 +3,13 @@ import { useNavigate, useParams, useLocation } from "react-router-dom";
 import styles from "./MenuQuantity.module.scss";
 import { getItemById } from "../../data/menuData";
 import { useCart } from "../../context/CartContext";
+import AssistBar from "../../components/AssistBar";
+import { useSettings } from "../../context/SettingsContext";
+import icon_back_svg from "../../assets/icon-back.svg";
+import icon_back_hc_svg from "../../assets/icon-back-hc.svg";
 
+const iconBack = icon_back_svg;
+const iconBackHc = icon_back_hc_svg;
 
 function MenuQuantity() {
   const navigate = useNavigate();
@@ -13,6 +19,7 @@ function MenuQuantity() {
   const temp = state?.temp ?? "ice";
   const item = getItemById(id);
   const { dispatch } = useCart();
+  const { highContrast } = useSettings();
 
   const [qty, setQty] = useState(1);
 
@@ -73,19 +80,27 @@ function MenuQuantity() {
           </div>
         </div>
 
-        {/* 확인 버튼 */}
-        <button className={styles.confirmRow} onClick={handleConfirm}>
-          <div className={styles.checkCircle}>
-            <span className={styles.checkIcon}>✓</span>
-          </div>
-          <span className={styles.confirmText}>정하셨으면 눌러주세요!</span>
+        {/* 이전으로 */}
+        <button
+          className={styles.prevBtn}
+          onClick={() => navigate(`/menu/${id}/temperature`, { state: { orderType } })}
+        >
+          <img src={iconBack} className={styles.prevIcon} alt="" />
+          <span>이전으로</span>
         </button>
       </div>
 
-      {/* 뒤로 가기 */}
-      <button className={styles.backBtn} onClick={() => navigate(-1)}>
-        뒤로 가기
+      {/* 다음으로 */}
+      <button className={styles.nextBtn} onClick={handleConfirm}>
+        <span>다음으로</span>
+        <img
+          src={highContrast ? iconBackHc : iconBack}
+          className={styles.nextIcon}
+          alt=""
+        />
       </button>
+
+      <AssistBar dark />
     </div>
   );
 }

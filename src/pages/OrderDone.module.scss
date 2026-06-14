@@ -3,6 +3,10 @@
   height: 1920px;
   position: relative;
   background: #fed32c;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+  }
 }
 
 // ── 헤더 ─────────────────────────────────────────────────
@@ -17,10 +21,19 @@
 }
 
 .logoWrap {
-  position: relative;
-  width: 280px;
-  height: 39px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 51px;
+
+  img {
+    height: 100%;
+    width: auto;
+    display: block;
+
+    [data-contrast="high"] & {
+      filter: brightness(0) invert(1);
+    }
+  }
 }
 
 .time {
@@ -29,6 +42,10 @@
   font-size: 50px;
   color: #000;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }
 
 // ── 타이틀 ────────────────────────────────────────────────
@@ -52,6 +69,10 @@
   color: #6e5e22;
   line-height: normal;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #aea688;
+  }
 }
 
 .title {
@@ -64,6 +85,10 @@
   white-space: pre-line;
   text-align: center;
   width: 819px;
+
+  [data-contrast="high"] & {
+    color: #fed32c;
+  }
 }
 
 // ── 마스코트 ──────────────────────────────────────────────
@@ -75,6 +100,10 @@
   width: 408px;
   height: 470px;
   overflow: hidden;
+
+  [data-contrast="high"] & img {
+    filter: grayscale(1) brightness(1.0);
+  }
 }
 
 // ── 예상 대기시간 카드 ────────────────────────────────────
@@ -91,16 +120,27 @@
   align-items: center;
   justify-content: center;
   gap: 32px;
+
+  [data-contrast="high"] & {
+    background: #fed32c;
+  }
   box-shadow:
     0px 8px 4px rgba(207, 205, 197, 0.23),
     inset -2px -5px 8px rgba(83, 72, 26, 0.25);
 }
 
-// ── 핸드 아이콘 ───────────────────────────────────────────
-.handIcon {
+.clockIcon {
   position: relative;
-  width: 84px;
-  height: 116px;
+  width: 146px;
+  height: 129px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.homeIcon{
+  position: relative;
+  width: 77px;
+  height: 75px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -122,6 +162,10 @@
   color: #30190b;
   line-height: normal;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #141414;
+  }
 }
 
 .waitTime {
@@ -131,6 +175,10 @@
   color: #30190b;
   line-height: normal;
   margin: 0;
+
+  [data-contrast="high"] & {
+    color: #141414;
+  }
 }
 
 // ── 처음 화면으로 돌아가기 버튼 ──────────────────────────
@@ -153,6 +201,12 @@
     0px 8px 4px rgba(207, 205, 197, 0.23),
     inset -2px -5px 8px rgba(83, 72, 26, 0.25);
   padding: 0 166px;
+
+  [data-contrast="high"] & {
+    background: #1a1810;
+    border: 5px solid #fafafa;
+    box-shadow: none;
+  }
 }
 
 .backLabel {
@@ -161,4 +215,8 @@
   font-size: 64px;
   color: #30190b;
   white-space: nowrap;
+
+  [data-contrast="high"] & {
+    color: #fafafa;
+  }
 }

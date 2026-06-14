@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useKoreanTime from "../hooks/useKoreanTime";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./PaymentDone.module.scss";
 import logo_png from "../assets/logo.png";
@@ -11,6 +12,7 @@ const SECONDS = 3;
 
 function PaymentDone() {
   const navigate = useNavigate();
+  const time = useKoreanTime();
   const { state } = useLocation();
   const orderType = state?.orderType ?? "dine-in";
   const [count, setCount] = useState(SECONDS);
@@ -29,12 +31,9 @@ function PaymentDone() {
       {/* 헤더 */}
       <div className={styles.header}>
         <div className={styles.logoWrap}>
-          <img src={imgLogo} alt="MEGA COFFEE" style={{
-            position: "absolute", width: "301.44%", height: "1206.03%",
-            left: "-101.03%", top: "-691.09%", maxWidth: "none",
-          }} />
+          <img src={imgLogo} alt="MEGA COFFEE" />
         </div>
-        <span className={styles.time}>16:44</span>
+        <span className={styles.time}>{time}</span>
       </div>
 
       {/* 완료 텍스트 */}
@@ -54,12 +53,19 @@ function PaymentDone() {
 
       {/* 카드 이미지 */}
       <div className={styles.cardImgWrap}>
-        <img src={imgCard} alt="" style={{
-          position: "absolute",
-          width: "139.13%", height: "110.94%",
-          left: "-14.27%", top: "-1.95%",
-          maxWidth: "none", pointerEvents: "none",
-        }} />
+        <img
+          src={imgCard}
+          alt=""
+          style={{
+            position: "absolute",
+            width: "139.13%",
+            height: "110.94%",
+            left: "-14.27%",
+            top: "-1.95%",
+            maxWidth: "none",
+            pointerEvents: "none",
+          }}
+        />
       </div>
 
       {/* 카운트다운 */}
@@ -68,7 +74,9 @@ function PaymentDone() {
           className={styles.countdownBar}
           style={{ width: `${(count / SECONDS) * 100}%` }}
         />
-        <span className={styles.countdownText}>{count}초 후 자동으로 넘어갑니다</span>
+        <span className={styles.countdownText}>
+          {count}초 후 자동으로 넘어갑니다
+        </span>
       </div>
     </div>
   );
